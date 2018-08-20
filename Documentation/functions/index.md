@@ -8,12 +8,15 @@
 * animateMeshFromTo()
 * animateColorFromTo()
 * animateTexCoordFromTo()
+
 [applyRotLocSz.c](applyRotLocSz/applyRotLocSz.md)
 * applyRotLocSz()
 * applyMeshViewRotLocSz()
+
 [asciiOpenGL.c](asciiOpenGL/asciiOpenGL.md)
 * drawAsciiChar()
 * drawAscii()
+
 [collisionDetect.c](collisionDetect/collisionDetect.md)
 * parallQuadToNormBoxContact()
 * boundsContact()
@@ -26,14 +29,17 @@
 * localBoxKnockOut()
 * localBoxDetectAndMove()
 * localBoxCollision()
+
 [collisionDetect2.c](collisionDetect2/collisionDetect2.md)
 * ptToTriMeshCollision()
 * ptToQuadMeshCollision()
 * ptToTriCollision()
 * ptToTriMeshZCollision()
 * ptToQuadMeshZCollision()
+
 [drawMeshGL.c](drawMeshGL/drawMeshGL.md)
 * drawMesh()
+
 [glDebug.c](glDebug/glDebug.md)
 * printfScrn()
 * drawPt()
@@ -44,6 +50,7 @@
 * screenShot()
 * eventRecToFile()
 * eventPlayFromFile()
+
 [mixPlaySnd.c](mixPlaySnd/mixPlaySnd.md)
 * mixPlaySound()
 * endAllSound()
@@ -51,6 +58,7 @@
 * iniSndBuffs()
 * closeSndBuffs()
 * soundToDevice()
+
 [path.c](path/path.md)
 * resizeLineToPlaneX()
 * resizeLineToPlaneY()
@@ -63,17 +71,21 @@
 * zPlaneSkidPath()
 * getDirectionChgAngle()
 * getTravelLength()
+
 [physics.c](physics/physics.md)
 * ptToPlaneSkid()
 * boxSkid()
+
 [polyTransData.c](polyTransData/polyTransData.md)
 * makeTriTransData()
 * makeQuadTransData()
+
 [rotate.c](rotate/rotate.md)
 * relativeRot()
 * rotate()
 * degRot()
 * ucRot()
+
 [rotate2.c](rotate2/rotate2.md)
 * addRotToXyzUcRot()
 * subtractRotFromXyzUcRot()
@@ -88,9 +100,11 @@
 * getUCRotPointToAxisX()
 * getUCRotPointToAxisY()
 * getUCRotPointToAxisZ()
+
 [textureGL.c](textureGL/textureGL.md)
 * addTexture()
 * deleteTextures()
+
 [transform.c](transform/transform.md)
 * globalRot()
 * localRot()
@@ -114,3 +128,4 @@
 * copyMeshFromTo()
 * copyColorFromTo()
 * copyTexCoordFromTo()
+

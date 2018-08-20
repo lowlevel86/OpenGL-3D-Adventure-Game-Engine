@@ -13,4 +13,6 @@ ls -d ./*/ | sed "s/$/*.md/" | sed "s/^/echo /" | sh | while read -r fileToRead 
    # print a list of functions that are in the specific c file
    cat "$fileToRead" | grep "###" | sed "s/### //" | sed "s/^/* /" >> index.md
    
+   echo "" >> index.md
+   
 done
