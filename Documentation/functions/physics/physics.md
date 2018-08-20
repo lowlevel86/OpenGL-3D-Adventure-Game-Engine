@@ -27,5 +27,3 @@ Finds the skid direction of a box to box collision. It requires an integer conta
 
 ---
 
-[Back to Game Engine Functions](index.html)
-

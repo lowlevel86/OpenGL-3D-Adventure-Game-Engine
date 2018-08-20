@@ -28,5 +28,3 @@ The "camera" mesh transformation is applied in the following order:
 
 ---
 
-[Back to Game Engine Functions](index.html)
-

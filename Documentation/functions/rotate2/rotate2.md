@@ -80,5 +80,3 @@ Get the unit circle coordinates to rotate a point to the z-axis.
 
 ---
 
-[Back to Game Engine Functions](index.html)
-

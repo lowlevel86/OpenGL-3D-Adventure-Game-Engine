@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>mixPlaySnd.c</title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<div id="header">
+<h1 class="title">mixPlaySnd.c</h1>
+</div>
+<div id="TOC">
+<ul>
+<li><a href="#mixplaysound">mixPlaySound()</a></li>
+<li><a href="#endallsound">endAllSound()</a></li>
+<li><a href="#endsound">endSound()</a></li>
+<li><a href="#inisndbuffs">iniSndBuffs()</a></li>
+<li><a href="#closesndbuffs">closeSndBuffs()</a></li>
+<li><a href="#soundtodevice">soundToDevice()</a></li>
+</ul>
+</div>
+<hr />
+<h3 id="mixplaysound">mixPlaySound()</h3>
+<p>Controls when to send sound data to a buffer for mixing and playing.</p>
+<p>Note: the sound volume needs to be divided by 8 to insure there is no over amplification.</p>
+<div class="figure">
+<img src="0.png" />
+
+</div>
+<p>Sound data is sent to mixSndTracks() where it is mixed and later seamlessly played with the help of two buffers in loadPlaySnd().</p>
+<p><img src="1.png" /> <img src="2.png" /></p>
+<hr />
+<h3 id="endallsound">endAllSound()</h3>
+<p>Controls when to gently stop all sound from playing.</p>
+<div class="figure">
+<img src="3.png" />
+
+</div>
+<hr />
+<h3 id="endsound">endSound()</h3>
+<p>Controls when to gently stop a specific sound from playing.</p>
+<div class="figure">
+<img src="3.png" />
+
+</div>
+<hr />
+<h3 id="inisndbuffs">iniSndBuffs()</h3>
+<p>Allocates sound buffers and sets the sample rate.</p>
+<hr />
+<h3 id="closesndbuffs">closeSndBuffs()</h3>
+<p>Frees memory used by the sound buffers.</p>
+<hr />
+<h3 id="soundtodevice">soundToDevice()</h3>
+<p>Sends sound for output.</p>
+<hr />
+</body>
+</html>

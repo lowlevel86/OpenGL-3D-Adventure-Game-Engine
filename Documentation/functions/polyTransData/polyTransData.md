@@ -16,13 +16,13 @@ Each data block will contain:
 
 This function will use transcendental functions to find how to put a triangle into a normalized state and get transformation data representing its orientation, location, and size.
 
-![](polyTransData/00.png) ![](polyTransData/01.png)
+![](00.png) ![](01.png)
 
-![](polyTransData/02.png) ![](polyTransData/03.png)
+![](02.png) ![](03.png)
 
-![](polyTransData/04.png) ![](polyTransData/05.png)
+![](04.png) ![](05.png)
 
-![](polyTransData/06.png) ![](polyTransData/07.png)
+![](06.png) ![](07.png)
 
 ---
 
@@ -39,6 +39,4 @@ Each data block will contain:
 > bounds radius,  
 
 ---
-
-[Back to Game Engine Functions](index.html)
 

@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>animate.c</title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<div id="header">
+<h1 class="title">animate.c</h1>
+</div>
+<div id="TOC">
+<ul>
+<li><a href="#animatetransfromto">animateTransFromTo()</a></li>
+<li><a href="#animaterotfromto">animateRotFromTo()</a></li>
+<li><a href="#animatelocfromto">animateLocFromTo()</a></li>
+<li><a href="#animatesizefromto">animateSizeFromTo()</a></li>
+<li><a href="#animateucrotfromto">animateUcRotFromTo()</a></li>
+<li><a href="#animatemeshfromto">animateMeshFromTo()</a></li>
+<li><a href="#animatecolorfromto">animateColorFromTo()</a></li>
+<li><a href="#animatetexcoordfromto">animateTexCoordFromTo()</a></li>
+</ul>
+</div>
+<hr />
+<p>These functions make use of a simple equation:<br />
+result = (B - A) * Percent_of_Change + A</p>
+<hr />
+<h3 id="animatetransfromto">animateTransFromTo()</h3>
+<p>Animate all of the transformation data from one state to another.<br />
+Transformation data affected:<br />
+* rotation<br />
+* location<br />
+* size<br />
+* unit circle coordinates<br />
+* bounds radius</p>
+<hr />
+<h3 id="animaterotfromto">animateRotFromTo()</h3>
+<p>Animate the rotation data and copy it to the unit circle coordinate data.<br />
+Transformation data affected:<br />
+* rotation<br />
+* unit circle coordinates</p>
+<hr />
+<h3 id="animatelocfromto">animateLocFromTo()</h3>
+<p>Animate position.<br />
+Transformation data affected:<br />
+* location</p>
+<hr />
+<h3 id="animatesizefromto">animateSizeFromTo()</h3>
+<p>Animate size.<br />
+Transformation data affected:<br />
+* size</p>
+<hr />
+<h3 id="animateucrotfromto">animateUcRotFromTo()</h3>
+<p>Animate only the unit circle coordinate data.<br />
+Transformation data affected:<br />
+* unit circle coordinates</p>
+<hr />
+<h3 id="animatemeshfromto">animateMeshFromTo()</h3>
+<p>Animate the point data.</p>
+<hr />
+<h3 id="animatecolorfromto">animateColorFromTo()</h3>
+<p>Animate the vertex colors.</p>
+<hr />
+<h3 id="animatetexcoordfromto">animateTexCoordFromTo()</h3>
+<p>Animate the texture coordinates.</p>
+<hr />
+</body>
+</html>

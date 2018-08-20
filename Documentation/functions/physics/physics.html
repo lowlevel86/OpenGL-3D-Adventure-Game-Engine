@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>physics.c</title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<div id="header">
+<h1 class="title">physics.c</h1>
+</div>
+<div id="TOC">
+<ul>
+<li><a href="#pttoplaneskid">ptToPlaneSkid()</a></li>
+<li><a href="#boxskid">boxSkid()</a></li>
+</ul>
+</div>
+<hr />
+<h3 id="pttoplaneskid">ptToPlaneSkid()</h3>
+<p>Finds the skid direction of a point trajectory on a plane. The plane is created by a mesh's transformation data.</p>
+<hr />
+<h3 id="boxskid">boxSkid()</h3>
+<p>Finds the skid direction of a box to box collision. It requires an integer containing face contact data in the following format:</p>
+<p>&quot;fixed box&quot; +X face == 0b1<br />
+&quot;fixed box&quot; +Y face == 0b10<br />
+&quot;fixed box&quot; +Z face == 0b100<br />
+&quot;fixed box&quot; -X face == 0b1000<br />
+&quot;fixed box&quot; -Y face == 0b10000<br />
+&quot;fixed box&quot; -Z face == 0b100000<br />
+&quot;moving box&quot; +X face == 0b1000000<br />
+&quot;moving box&quot; +Y face == 0b10000000<br />
+&quot;moving box&quot; +Z face == 0b100000000<br />
+&quot;moving box&quot; -X face == 0b1000000000<br />
+&quot;moving box&quot; -Y face == 0b10000000000<br />
+&quot;moving box&quot; -Z face == 0b100000000000</p>
+<hr />
+</body>
+</html>

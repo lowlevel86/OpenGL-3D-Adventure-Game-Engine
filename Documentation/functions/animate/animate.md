@@ -62,5 +62,3 @@ Animate the texture coordinates.
 
 ---
 
-[Back to Game Engine Functions](index.html)
-

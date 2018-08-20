@@ -14,5 +14,3 @@ Draws a string using the "drawAsciiChar" function.
 
 ---
 
-[Back to Game Engine Functions](index.html)
-

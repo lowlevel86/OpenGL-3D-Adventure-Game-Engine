@@ -56,5 +56,3 @@ Plays an event to file.
 
 ---
 
-[Back to Game Engine Functions](index.html)
-

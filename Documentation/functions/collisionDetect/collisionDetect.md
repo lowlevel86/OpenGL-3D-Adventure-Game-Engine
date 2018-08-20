@@ -10,7 +10,7 @@ This function will return true if a parallelogram is contacting a box created by
 
 ### boundsContact()
 
-![](collisionDetect/bounds.png)
+![](bounds.png)
 
 Uses the bounds radius of a mesh to create a box and determine if it is contacting or within the bounds of another box created the same way.  
 
@@ -26,7 +26,7 @@ Returns true if a box, created by a mesh's transformation data, is contacting or
 
 ### ptToBoundsCollision()
 
-![](collisionDetect/ptToBoundsCollision.png)
+![](ptToBoundsCollision.png)
 
 This function will return the preset location of the point (the point of collision) if it did collide with the box, the face it collided with (0=none, 1=right, 2=left, 3=back, 4=front, 5=top, 6=bottom), and if it collided from the outside or not.
 
@@ -34,13 +34,13 @@ This function will return the preset location of the point (the point of collisi
 
 ### ptToBoxCollision()
 
-![](collisionDetect/transBox.png)
+![](transBox.png)
 
 For this function the bounds box is not used. The transformation box will be used instead and unlike the bounds box this box can be rotated in any direction. 
 
 This function will return the preset location of the point (the point of collision) if it did collide with the box, the face it collided with (0=none, 1=right, 2=left, 3=back, 4=front, 5=top, 6=bottom), and if it collided from the outside or not.
 
-![](collisionDetect/ptToBoxCollision0.png) ![](collisionDetect/ptToBoxCollision1.png)
+![](ptToBoxCollision0.png) ![](ptToBoxCollision1.png)
 
 The math within the function will normalize the box using unit circle data. This is fast because it does not use transcendental functions (functions with lots of operations). It will then undo normalization for returning the point of collision.
 
@@ -107,7 +107,7 @@ Detects if the "moving box" is within the "fixed box" and moves the "moving box"
 "moving box" -Y face ==  0b10000000000  
 "moving box" -Z face == 0b100000000000  
 
-![](collisionDetect/localBoxDetectAndMove0.png) ![](collisionDetect/localBoxDetectAndMove1.png)
+![](localBoxDetectAndMove0.png) ![](localBoxDetectAndMove1.png)
 
 ---
 
@@ -127,9 +127,7 @@ Detects if a "moving box" has collided with a "fixed box" and finds the impact l
 "moving box" -Y face ==  0b10000000000  
 "moving box" -Z face == 0b100000000000  
 
-![](collisionDetect/localBoxCollision0.png) ![](collisionDetect/localBoxCollision1.png)
+![](localBoxCollision0.png) ![](localBoxCollision1.png)
 
 ---
-
-[Back to Game Engine Functions](index.html)
 

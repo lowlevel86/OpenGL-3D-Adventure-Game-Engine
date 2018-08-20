@@ -6,7 +6,7 @@
 
 Resizes a line to a plane that is parallel to the y and z axises.
 
-![](path/0.png)
+![](0.png)
 
 ---
 
@@ -26,7 +26,7 @@ Resizes a line to a plane that is parallel to the x and y axises.
 
 Finds the distance to move a point to the closest plane (x, y, or z) a destination point is on by following a relative x axis.
 
-![](path/1.png)
+![](1.png)
 
 ---
 
@@ -71,6 +71,4 @@ Finds an angle representing two differnt directions.
 Finds the distance to get to a position.
 
 ---
-
-[Back to Game Engine Functions](index.html)
 

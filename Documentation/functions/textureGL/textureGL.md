@@ -14,5 +14,3 @@ Deletes textures used by opengl.
 
 ---
 
-[Back to Game Engine Functions](index.html)
-

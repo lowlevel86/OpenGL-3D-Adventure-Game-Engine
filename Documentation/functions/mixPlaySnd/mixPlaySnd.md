@@ -8,11 +8,11 @@ Controls when to send sound data to a buffer for mixing and playing.
 
 Note: the sound volume needs to be divided by 8 to insure there is no over amplification.
 
-![](mixPlaySnd/0.png)
+![](0.png)
 
 Sound data is sent to mixSndTracks() where it is mixed and later seamlessly played with the help of two buffers in loadPlaySnd().
 
-![](mixPlaySnd/1.png) ![](mixPlaySnd/2.png)
+![](1.png) ![](2.png)
 
 ---
 
@@ -20,7 +20,7 @@ Sound data is sent to mixSndTracks() where it is mixed and later seamlessly play
 
 Controls when to gently stop all sound from playing.
 
-![](mixPlaySnd/3.png)
+![](3.png)
 
 ---
 
@@ -28,7 +28,7 @@ Controls when to gently stop all sound from playing.
 
 Controls when to gently stop a specific sound from playing.
 
-![](mixPlaySnd/3.png)
+![](3.png)
 
 ---
 
@@ -49,6 +49,4 @@ Frees memory used by the sound buffers.
 Sends sound for output.
 
 ---
-
-[Back to Game Engine Functions](index.html)
 

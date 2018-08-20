@@ -36,7 +36,7 @@ Similar to localConcurrentAxisRot() except it rotates many objects around a cent
 
 As opposed to localRot(), localConcurrentAxisRot() can rotate the x,y,z axes at the same time.
 
-![](transform/serialRot.gif) ![](transform/parallelRot.gif)
+![](serialRot.gif) ![](parallelRot.gif)
 
 ---
 
@@ -141,6 +141,4 @@ Copy vertex colors.
 Copy texture coordinates.
 
 ---
-
-[Back to Game Engine Functions](index.html)
 
