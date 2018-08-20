@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>collisionDetect2.c</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="date" content="" />
+</head>
+<body>
+<h1 class="title">collisionDetect2.c</h1>
+<div id="TOC"
+><ul
+  ><li
+    ><a href="#pttotrimeshcollision"
+      >ptToTriMeshCollision()</a
+      ></li
+    ><li
+    ><a href="#pttoquadmeshcollision"
+      >ptToQuadMeshCollision()</a
+      ></li
+    ><li
+    ><a href="#pttotricollision"
+      >ptToTriCollision()</a
+      ></li
+    ><li
+    ><a href="#pttotrimeshzcollision"
+      >ptToTriMeshZCollision()</a
+      ></li
+    ><li
+    ><a href="#pttoquadmeshzcollision"
+      >ptToQuadMeshZCollision()</a
+      ></li
+    ></ul
+  ></div
+>
+<hr
+ /><div id="pttotrimeshcollision"
+><h3
+  ><a href="#TOC"
+    >ptToTriMeshCollision()</a
+    ></h3
+  ><div class="figure"
+  ><img src="collisionDetect2/0.png"
+     /><p class="caption"
+    ></p
+    ></div
+  ><p
+  >Determines where or if a point collided from the inside or outside of a mesh.</p
+  ><p
+  >Note: makeTriTransData() must be used first to create transformation data for each polygon.</p
+  ><p
+  >Note: Each individual triangle will be normalized to test for a collision. This could cause the point to miss and go through the cracks of the triangles because each has to be rotated differently to be normalized. This is where the &quot;errorMargin&quot; variable might be useful, however ptToQuadMeshZCollision() could be used instead which does not have this problem.</p
+  ><p
+  ><img src="collisionDetect2/1.png"
+     /> <img src="collisionDetect2/2.png"
+     /> if errorMargin equals 0.001</p
+  ><p
+  >Note: If testing for when a point is inside a mesh and the mesh has both quads and triangles then make sure to use both ptToTriMeshCollision() and ptToQuadMeshCollision(). If the &quot;outside&quot; variable is true in both cases then it is outside of the mesh.</p
+  ><hr
+   /></div
+><div id="pttoquadmeshcollision"
+><h3
+  ><a href="#TOC"
+    >ptToQuadMeshCollision()</a
+    ></h3
+  ><p
+  >Determines where or if a point collided from the inside or outside of a mesh.</p
+  ><p
+  >Note: makeQuadTransData() must be used first to create transformation data for each polygon.</p
+  ><p
+  >Note: Each individual triangle will be normalized to test for a collision. This could cause the point to miss and go through the cracks of the triangles because each has to be rotated differently to be normalized. This is where the &quot;errorMargin&quot; variable might be useful, however ptToQuadMeshZCollision() could be used instead which does not have this problem.</p
+  ><p
+  >Note: If testing for when a point is inside a mesh and the mesh has both quads and triangles then make sure to use both ptToTriMeshCollision() and ptToQuadMeshCollision(). If the &quot;outside&quot; variable is true in both cases then it is outside of the mesh.</p
+  ><hr
+   /></div
+><div id="pttotricollision"
+><h3
+  ><a href="#TOC"
+    >ptToTriCollision()</a
+    ></h3
+  ><div class="figure"
+  ><img src="collisionDetect2/3.png"
+     /><p class="caption"
+    ></p
+    ></div
+  ><p
+  >This function can be used to find where and what side of a triangle a point has collided.</p
+  ><hr
+   /></div
+><div id="pttotrimeshzcollision"
+><h3
+  ><a href="#TOC"
+    >ptToTriMeshZCollision()</a
+    ></h3
+  ><p
+  >Can be used with getUCRotPointToAxisZ() to determine where or if a point collided from the inside or outside of a mesh.</p
+  ><p
+  >Note: If testing for when a point is inside a mesh and the mesh has both quads and triangles then make sure to use both ptToTriMeshZCollision() and ptToQuadMeshZCollision(). If the &quot;outside&quot; variable is true in both cases then it is outside of the mesh.</p
+  ><hr
+   /></div
+><div id="pttoquadmeshzcollision"
+><h3
+  ><a href="#TOC"
+    >ptToQuadMeshZCollision()</a
+    ></h3
+  ><p
+  >Can be used with getUCRotPointToAxisZ() to determine where or if a point collided from the inside or outside of a mesh.</p
+  ><p
+  >Note: If testing for when a point is inside a mesh and the mesh has both quads and triangles then make sure to use both ptToTriMeshZCollision() and ptToQuadMeshZCollision(). If the &quot;outside&quot; variable is true in both cases then it is outside of the mesh.</p
+  ><hr
+   /><p
+  ><a href="index.html"
+    >Back to Game Engine Functions</a
+    ></p
+  ></div
+>
+</body>
+</html>
+

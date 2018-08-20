@@ -1,0 +1,1 @@
+Compile and move "texToC.exe" to the meshes/texture/ directory.

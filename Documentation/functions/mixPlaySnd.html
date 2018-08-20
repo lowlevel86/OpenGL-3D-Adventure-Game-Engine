@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>mixPlaySnd.c</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="date" content="" />
+</head>
+<body>
+<h1 class="title">mixPlaySnd.c</h1>
+<div id="TOC"
+><ul
+  ><li
+    ><a href="#mixplaysound"
+      >mixPlaySound()</a
+      ></li
+    ><li
+    ><a href="#endallsound"
+      >endAllSound()</a
+      ></li
+    ><li
+    ><a href="#endsound"
+      >endSound()</a
+      ></li
+    ><li
+    ><a href="#inisndbuffs"
+      >iniSndBuffs()</a
+      ></li
+    ><li
+    ><a href="#closesndbuffs"
+      >closeSndBuffs()</a
+      ></li
+    ><li
+    ><a href="#soundtodevice"
+      >soundToDevice()</a
+      ></li
+    ></ul
+  ></div
+>
+<hr
+ /><div id="mixplaysound"
+><h3
+  ><a href="#TOC"
+    >mixPlaySound()</a
+    ></h3
+  ><p
+  >Controls when to send sound data to a buffer for mixing and playing.</p
+  ><p
+  >Note: the sound volume needs to be divided by 8 to insure there is no over amplification.</p
+  ><div class="figure"
+  ><img src="mixPlaySnd/0.png"
+     /><p class="caption"
+    ></p
+    ></div
+  ><p
+  >Sound data is sent to mixSndTracks() where it is mixed and later seamlessly played with the help of two buffers in loadPlaySnd().</p
+  ><p
+  ><img src="mixPlaySnd/1.png"
+     /> <img src="mixPlaySnd/2.png"
+     /></p
+  ><hr
+   /></div
+><div id="endallsound"
+><h3
+  ><a href="#TOC"
+    >endAllSound()</a
+    ></h3
+  ><p
+  >Controls when to gently stop all sound from playing.</p
+  ><div class="figure"
+  ><img src="mixPlaySnd/3.png"
+     /><p class="caption"
+    ></p
+    ></div
+  ><hr
+   /></div
+><div id="endsound"
+><h3
+  ><a href="#TOC"
+    >endSound()</a
+    ></h3
+  ><p
+  >Controls when to gently stop a specific sound from playing.</p
+  ><div class="figure"
+  ><img src="mixPlaySnd/3.png"
+     /><p class="caption"
+    ></p
+    ></div
+  ><hr
+   /></div
+><div id="inisndbuffs"
+><h3
+  ><a href="#TOC"
+    >iniSndBuffs()</a
+    ></h3
+  ><p
+  >Allocates sound buffers and sets the sample rate.</p
+  ><hr
+   /></div
+><div id="closesndbuffs"
+><h3
+  ><a href="#TOC"
+    >closeSndBuffs()</a
+    ></h3
+  ><p
+  >Frees memory used by the sound buffers.</p
+  ><hr
+   /></div
+><div id="soundtodevice"
+><h3
+  ><a href="#TOC"
+    >soundToDevice()</a
+    ></h3
+  ><p
+  >Sends sound for output.</p
+  ><hr
+   /><p
+  ><a href="index.html"
+    >Back to Game Engine Functions</a
+    ></p
+  ></div
+>
+</body>
+</html>
+

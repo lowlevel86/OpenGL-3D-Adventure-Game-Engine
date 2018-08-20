@@ -1,0 +1,251 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>Blender</title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<div id="header">
+<h1 class="title">Blender</h1>
+</div>
+<div id="TOC">
+<ul>
+<li><a href="#mesh-modeling">Mesh Modeling</a></li>
+<li><a href="#color-using-vertex-paint">Color Using Vertex Paint</a></li>
+<li><a href="#color-using-colors-from-texture">Color Using Colors From Texture</a></li>
+<li><a href="#adding-texture-to-mesh">Adding Texture to Mesh</a></li>
+<li><a href="#cage-import-export">CAGE Import / Export</a></li>
+</ul>
+</div>
+<div class="figure">
+<img src="Blender/0.png" />
+
+</div>
+<p>These howtos are for blender 2.49b.</p>
+<hr />
+<h3 id="mesh-modeling">Mesh Modeling</h3>
+<h5 id="start-blender-and-erase-everything">Start blender and erase everything:</h5>
+<p>Move the mouse cursor into the &quot;3D View&quot; window<br />
+Press 'A' to select everything<br />
+Press 'X' and click to confirm<br />
+Click &quot;File&quot; -&gt; &quot;Save As...&quot; and save as &quot;lightCycle.blend&quot;<br />
+Remember to save throughout and to save often</p>
+<h5 id="move-the-cursor-to-center">Move the cursor to center:</h5>
+<p>Get the &quot;View Properties&quot; window by clicking &quot;View&quot; then &quot;View Properties...&quot;<br />
+In the &quot;View Properties&quot; window move the 3D cursor to location 0.0, 0.0, 0.0 by clicking the center of each coordinate number and typing 0</p>
+<h5 id="add-a-mesh">Add a mesh:</h5>
+<p>Make sure the the &quot;3D View&quot; window is in orthographic mode by clicking &quot;View&quot; then &quot;Orthographic&quot;<br />
+Press 'Spacebar'<br />
+Goto &quot;Add&quot; -&gt; &quot;Mesh&quot; and click &quot;Torus&quot;<br />
+Press 'N' to reveal the &quot;Transform Properties&quot; window</p>
+<h5 id="create-the-wheels">Create the wheels:</h5>
+<p>Make sure the torus is highlighted<br />
+In the &quot;Transform Properties&quot; window change &quot;ScaleZ&quot; to 2.000<br />
+Go into edit mode by pressing 'Tab'<br />
+Rotate the torus 90 degrees by pressing 'R' then 'Y' for the axis and enter in 90<br />
+Press 'Tab' again to exit edit mode and go into object mode<br />
+Change to side view by clicking &quot;View&quot; then &quot;Side&quot;<br />
+In the &quot;Transform Properties&quot; window change &quot;LocY&quot; to -2.000<br />
+In the &quot;Transform Properties&quot; window change &quot;OB&quot; to &quot;backWheel&quot;<br />
+Hold 'Shift' and press 'D' to duplicate the object<br />
+Right click to return the duplicated object<br />
+Move the duplicated object by changing &quot;LocY&quot; to 3.000 in the &quot;Transform Properties&quot; window<br />
+In the &quot;Transform Properties&quot; window change &quot;OB&quot; to &quot;frontWheel&quot;</p>
+<h5 id="create-the-shell-of-the-body">Create the shell of the body:</h5>
+<p>In the &quot;View Properties&quot; window move the 3D cursor to location 0.0, 0.0, 0.0<br />
+Click &quot;Add&quot; -&gt; &quot;Mesh&quot; and click &quot;Torus&quot;<br />
+Go into edit mode by pressing 'Tab'<br />
+Rotate the torus 90 degrees by pressing 'R' then 'Y' for the axis and enter in 90<br />
+Press 'S' and enter in 4 to resize the torus<br />
+Hold 'Ctrl' and press tab and select &quot;Vertices&quot; for vertex select mode<br />
+Press 'Z' to make hidden vertices selectable<br />
+Press 'B' and drag the mouse to select vertices<br />
+Press 'X' and click &quot;Vertices&quot; to erase unwanted geometry to create a top shell<br />
+Right clicking can also be used to select vertices<br />
+Hold 'Ctrl' and press tab and select &quot;Edges&quot; for edge select mode<br />
+Hold 'Shift' and select two edges at the corner and press 'F' to create a face<br />
+Repeat for each corner of the shell<br />
+Use 'S' and 'G' to size and move the shell how you want it on top of the wheels</p>
+<div class="figure">
+<img src="Blender/1.png" />
+
+</div>
+<h5 id="create-the-rest-of-the-body">Create the rest of the body:</h5>
+<p>In the &quot;View Properties&quot; window move the 3D cursor to location 0.0, 0.0, 0.0<br />
+While still in edit mode click &quot;Add&quot; -&gt; &quot;Mesh&quot; and click &quot;Cube&quot;<br />
+Right click select the top edges of the cube and press 'X' and click &quot;Only Faces&quot;<br />
+While the top edges are selected press 'S' and enter in 1.5<br />
+Hold 'Ctrl' and press 'L' to selected connected vertices Press 'S' and enter in 0.6<br />
+Hold 'Ctrl' and press tab and select &quot;Vertices&quot; for vertex select mode<br />
+Click &quot;View&quot; then &quot;Side&quot; to help position vertices<br />
+Use 'B' to select and position each corner how you want it under the shell<br />
+Press 'Tab' to exit edit mode and go into object mode<br />
+In the &quot;Transform Properties&quot; window change &quot;OB&quot; to &quot;body&quot;</p>
+<h5 id="create-the-bottom-frame">Create the bottom frame:</h5>
+<p>In the &quot;View Properties&quot; window move the 3D cursor to location 0.0, 0.0, 0.0<br />
+Click &quot;Add&quot; -&gt; &quot;Mesh&quot; and click &quot;Circle&quot;<br />
+In the &quot;Add Circle&quot; window type 16 for &quot;Vertices&quot;, 0.7 for &quot;Radius&quot;, and enable &quot;Fill&quot;<br />
+Go into edit mode by pressing 'Tab'<br />
+Rotate the circle 90 degrees by pressing 'R' then 'Y' for the axis and enter in 90<br />
+In the &quot;Transform Properties&quot; window change &quot;LocY&quot; to -2.000<br />
+Hold 'Shift' and press 'D' to duplicate the mesh<br />
+Right click to return the duplicated mesh<br />
+Move the duplicated mesh by changing &quot;LocY&quot; to 3.000 in the &quot;Transform Properties&quot; window<br />
+Hold 'Ctrl' and press tab and select &quot;Edges&quot; for edge select mode<br />
+Right click to highlight and use 'F' to connect the closest 4 edges of each circle<br />
+Press 'A' 1 or 2 times to have nothing selected<br />
+Use 'B' to select the 5 connected lines<br />
+Press 'W' and in the &quot;Specials&quot; window click &quot;Subdivide Multi&quot;, use 3 for &quot;Number of Cuts&quot;<br />
+Hold 'Ctrl' and press tab and select &quot;Vertices&quot; for vertex select mode</p>
+<p><img src="Blender/2.png" /> <img src="Blender/3.png" /></p>
+<p>Select everything except the outer edges and center vertex of each circle<br />
+Press 'W' and in the &quot;Specials&quot; window click &quot;Smooth&quot; and repeat<br />
+Press 'A' 2 times to select all<br />
+In the &quot;Transform Properties&quot; window change &quot;LocX&quot; to 0.600<br />
+Press 'E' and in the &quot;Extrude&quot; window click &quot;Region&quot;<br />
+Right click to return the duplicated mesh<br />
+In the &quot;Transform Properties&quot; window change &quot;LocX&quot; to -0.600<br />
+Hold 'Ctrl' and press tab and select &quot;Edges&quot; for edge select mode<br />
+Select an edge near the hubs connected to a face a wheel goes through, press 'X' and click &quot;Edges&quot;, repeat 3 more times<br />
+Hold 'Ctrl' and press tab and select &quot;Vertices&quot; for vertex select mode<br />
+Select all vertices between the wheels<br />
+Press 'S' then 'X' and enter in 0.75 to resize the center of the frame<br />
+Press 'Tab' to exit edit mode and go into object mode<br />
+In the &quot;Transform Properties&quot; window change &quot;OB&quot; to &quot;frame&quot;</p>
+<h5 id="create-an-indicator-sign">Create an indicator sign:</h5>
+<p>In the &quot;View Properties&quot; window move the 3D cursor to location 0.0, 0.0, 4.0<br />
+Click &quot;Add&quot; -&gt; &quot;Mesh&quot; and click &quot;Plane&quot;<br />
+Go into edit mode by pressing 'Tab'<br />
+Rotate the circle 90 degrees by pressing 'R' then 'X' for the axis and enter in 90<br />
+Press 'Tab' to exit edit mode and go into object mode<br />
+In the &quot;Transform Properties&quot; window change &quot;OB&quot; to &quot;sign&quot;</p>
+<hr />
+<h3 id="color-using-vertex-paint">Color Using Vertex Paint</h3>
+<h5 id="recalculate-normals-outside">Recalculate normals outside:</h5>
+<p>Open &quot;lightCycle.blend&quot;<br />
+Select the &quot;body&quot; while in object mode<br />
+Go into edit mode by pressing 'Tab'<br />
+Press 'D' and click &quot;Texture Solid&quot; to differentiate the inside of faces from the outside<br />
+Press 'A' 1 or 2 times to select all<br />
+Hold 'Ctrl', press 'N' and click &quot;Recalculate normals outside&quot;<br />
+Repeat this process for all objects<br />
+Note: To recalculate normals inside hold 'Ctrl', 'Shift' and press 'N'</p>
+<div class="figure">
+<img src="Blender/4.png" />
+
+</div>
+<h5 id="using-vertex-paint">Using Vertex Paint:</h5>
+<p>Change where it say's &quot;Object Mode&quot; to &quot;Vertex Paint&quot;<br />
+Press 'F' to enable or disable the painting mask<br />
+Press 'F9' to view paint controls in the &quot;Buttons Window&quot;<br />
+Press 'N' to hide or reveal the &quot;Paint Properties&quot;<br />
+With the painting mask enabled select a color, select what to paint and click &quot;SetVCol&quot;<br />
+Use 'Tab' to get in and out of edit mode for better selecting options<br />
+Change where it say's &quot;Vertex Paint&quot; back to &quot;Object Mode&quot; to switch to a different object</p>
+<hr />
+<h3 id="color-using-colors-from-texture">Color Using Colors From Texture</h3>
+<p>Note: You will need texture_to_vcol.py (a &quot;Bake Texture to VColor&quot; python script)</p>
+<h5 id="prepare-the-environment">Prepare the environment:</h5>
+<p>Open &quot;lightCycle.blend&quot;<br />
+Right click between the &quot;3D View&quot; and &quot;Buttons Window&quot; windows and click &quot;Split Area&quot;<br />
+Use about half the &quot;3D View&quot; window and change the window on the right to &quot;UV/Image Editor&quot;</p>
+<div class="figure">
+<img src="Blender/5.png" />
+
+</div>
+<h5 id="prepare-the-mesh">Prepare the mesh:</h5>
+<p>Make sure normals are flipped the right way first<br />
+Press 'D' and click &quot;OpenGL Solid&quot;<br />
+Select the &quot;body&quot; while in object mode<br />
+Go into edit mode by pressing 'Tab'<br />
+Press 'A' 1 or 2 times to select all<br />
+Press 'F9' and in &quot;Link and Materials&quot; click &quot;Set Smoot&quot;<br />
+Repeat for all objects</p>
+<h5 id="use-texture-to-assign-vertex-color">Use texture to assign vertex color:</h5>
+<p>Press 'D' and click &quot;Textured Solid&quot;<br />
+Select the &quot;body&quot; while in object mode<br />
+Go into edit mode by pressing 'Tab'<br />
+Press 'A' 1 or 2 times to select all<br />
+Press 'U' and click &quot;Unwrap&quot;<br />
+In the &quot;UV/Image Editor&quot; window click &quot;Image&quot; -&gt; &quot;New...&quot; then &quot;OK&quot;<br />
+Click &quot;Image&quot; -&gt; &quot;Texture Painting&quot;<br />
+Click &quot;View&quot; -&gt; &quot;Paint Tool...&quot;<br />
+In the &quot;3D View&quot; press 'Tab' then 'V' to get to vertex paint mode<br />
+Click &quot;Paint&quot; -&gt; &quot;Bake Texture to VColor...&quot; (a python script)<br />
+In the &quot;3D View&quot; press 'V' then 'Tab' to get to edit mode<br />
+In the &quot;UV/Image Editor&quot; click the &quot;X&quot; next to the datablock name<br />
+In the &quot;3D View&quot; press 'Tab' to get back to object mode</p>
+<h5 id="vertex-coloring-using-light-sources">Vertex coloring using light sources:</h5>
+<p>Press 'D' and click &quot;Textured Solid&quot;<br />
+Select the &quot;body&quot; while in object mode<br />
+Go into edit mode by pressing 'Tab'<br />
+Press 'A' 1 or 2 times to select all<br />
+Press 'U' and click &quot;Unwrap&quot;<br />
+Sometimes &quot;Lightmap UVPack&quot; might be a better choice<br />
+If using &quot;Lightmap UVPack&quot; choose 48 for &quot;Pack Quality&quot; and 1.000 for &quot;Margin&quot;<br />
+In the &quot;UV/Image Editor&quot; window click &quot;Image&quot; -&gt; &quot;New...&quot; then &quot;OK&quot;<br />
+Press 'Tab' for object mode<br />
+Click &quot;Add&quot; -&gt; &quot;Lamp&quot; and click &quot;Lamp&quot;<br />
+Move the lamp where ever you want it<br />
+Press 'F5' while the lamp is selected<br />
+In the shading panel change the type, color, and energy how you want<br />
+Use as many lamps as you need<br />
+Press 'F10' and click the &quot;Bake&quot; tab<br />
+Select the &quot;body&quot; in the &quot;3D View&quot; window<br />
+With &quot;Full Render&quot; selected click &quot;BAKE&quot;<br />
+In the &quot;3D View&quot; press 'V' to get to vertex paint mode<br />
+Click &quot;Paint&quot; -&gt; &quot;Bake Texture to VColor...&quot; (a python script)<br />
+In the &quot;3D View&quot; press 'V' then 'Tab' to get to edit mode<br />
+In the &quot;UV/Image Editor&quot; click the &quot;X&quot; next to the datablock name<br />
+In the &quot;3D View&quot; press 'Tab' to get back to object mode</p>
+<hr />
+<h3 id="adding-texture-to-mesh">Adding Texture to Mesh</h3>
+<p>Open &quot;lightCycle.blend&quot;<br />
+Right click between the &quot;3D View&quot; and &quot;Buttons Window&quot; windows and click &quot;Split Area&quot;<br />
+Use about half the &quot;3D View&quot; window and change the window on the right to &quot;UV/Image Editor&quot;<br />
+Select the &quot;sign&quot; while in object mode<br />
+Hold 'Shift' and press 'D' to duplicate the object<br />
+Place the object where it can be easily distinguished from the other objects<br />
+Duplicate the &quot;sign&quot; object 3 more times</p>
+<p>Press 'D' and click &quot;Textured Solid&quot;<br />
+Select the &quot;body&quot; while in object mode<br />
+Go into edit mode by pressing 'Tab'<br />
+Press 'A' 1 or 2 times to select all<br />
+Press 'U' and click &quot;Unwrap&quot;<br />
+In the &quot;UV/Image Editor&quot; window click &quot;Image&quot; -&gt; &quot;Open...&quot;<br />
+Locate &quot;cityGlare.bmp&quot; in the texture folder<br />
+Press 'B' to select and use 'S' and 'G' to size and move the outline how you want over the texture<br />
+Repeat this process for the &quot;frame&quot; object</p>
+<p>Add &quot;green.bmp&quot; to the &quot;sign&quot; object<br />
+Add &quot;noise1.bmp&quot; to the &quot;sign.001&quot; object<br />
+Add &quot;noise2.bmp&quot; to the &quot;sign.002&quot; object<br />
+Add &quot;noise3.bmp&quot; to the &quot;sign.003&quot; object<br />
+Add &quot;red.bmp&quot; to the &quot;sign.004&quot; object</p>
+<p>In the &quot;UV/Image Editor&quot; window click &quot;Image&quot; -&gt; &quot;Consolidate into one image&quot;<br />
+Use 512 for &quot;Pixel Size&quot;<br />
+Use 2 for &quot;Pixel Margin&quot;<br />
+Click &quot;All Sel Objects&quot; and &quot;OK&quot;<br />
+In the &quot;UV/Image Editor&quot; window click &quot;Image&quot; -&gt; &quot;Save As...&quot;<br />
+Save image as &quot;lightCycle.bmp&quot; make sure to choose the &quot;BMP&quot; option<br />
+In the &quot;UV/Image Editor&quot; window click &quot;Image&quot; -&gt; &quot;Replace...&quot; and choose &quot;lightCycle.bmp&quot;</p>
+<h5 id="creating-a-mask">Creating a mask:</h5>
+<p>Using &quot;lightCycle.bmp&quot; as a template, open it with an image editor<br />
+Anything painted with black is hidden<br />
+Anything painted with white is visible<br />
+Save as &quot;lightCycleMask.bmp&quot;</p>
+<hr />
+<h3 id="cage-import-export">CAGE Import / Export</h3>
+<p>Note: You will need c_exportTex.py and c_importTex.py</p>
+<h5 id="export-a-scene">Export a scene:</h5>
+<p>Open &quot;lightCycle.blend&quot;<br />
+Goto &quot;File&quot; -&gt; &quot;Export&quot; -&gt; &quot;C code tex (.c)...&quot;</p>
+<h5 id="import-a-scene">Import a scene:</h5>
+<p>Goto &quot;File&quot; -&gt; &quot;Import&quot; -&gt; &quot;C code tex (.c)...&quot;<br />
+Choose a compatible c file</p>
+<hr />
+<p><a href="index.html">Back to Game Engine HowTos</a></p>
+</body>
+</html>

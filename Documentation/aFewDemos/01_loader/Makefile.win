@@ -1,0 +1,22 @@
+# use to compile: ..\..\mingw32\bin\mingw32-make.exe -f .\Makefile.win
+# use to make clean: ..\..\mingw32\bin\mingw32-make.exe -f .\Makefile.win clean
+
+CC = ..\..\mingw32\bin\gcc.exe
+WINDRES = ..\..\mingw32\bin\windres.exe
+RES =
+OBJ = main.o world.o 3dEngine\rotate.o 3dEngine\rotate2.o 3dEngine\applyRotLocSz.o 3dEngine\transform.o 3dEngine\drawMeshGL.o $(RES)
+LIBS = -mwindows -lopengl32
+BIN = loader.exe
+CFLAGS = -Wall
+RM = del
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(OBJ) -o $(BIN) $(LIBS)

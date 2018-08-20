@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>polyTransData.c</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="date" content="" />
+</head>
+<body>
+<h1 class="title">polyTransData.c</h1>
+<div id="TOC"
+><ul
+  ><li
+    ><a href="#maketritransdata"
+      >makeTriTransData()</a
+      ></li
+    ><li
+    ><a href="#makequadtransdata"
+      >makeQuadTransData()</a
+      ></li
+    ></ul
+  ></div
+>
+<hr
+ /><div id="maketritransdata"
+><h3
+  ><a href="#TOC"
+    >makeTriTransData()</a
+    ></h3
+  ><p
+  >Creates an array of transformation data blocks representing each polygon of each mesh object.<br
+     />Each data block will contain:<br
+     />&gt; x, y, z, rotation<br
+     />&gt; x, y, z, location<br
+     />&gt; x, y, z, size<br
+     />&gt; y, z, unit circle coordinates for x rotation<br
+     />&gt; x, z, unit circle coordinates for y rotation<br
+     />&gt; x, y, unit circle coordinates for z rotation<br
+     />&gt; bounds radius,</p
+  ><p
+  >This function will use transcendental functions to find how to put a triangle into a normalized state and get transformation data representing its orientation, location, and size.</p
+  ><p
+  ><img src="polyTransData/00.png"
+     /> <img src="polyTransData/01.png"
+     /></p
+  ><p
+  ><img src="polyTransData/02.png"
+     /> <img src="polyTransData/03.png"
+     /></p
+  ><p
+  ><img src="polyTransData/04.png"
+     /> <img src="polyTransData/05.png"
+     /></p
+  ><p
+  ><img src="polyTransData/06.png"
+     /> <img src="polyTransData/07.png"
+     /></p
+  ><hr
+   /></div
+><div id="makequadtransdata"
+><h3
+  ><a href="#TOC"
+    >makeQuadTransData()</a
+    ></h3
+  ><p
+  >Uses makeTriTransData() to create an array of transformation data blocks representing each polygon of each quad of each mesh object.<br
+     />Each data block will contain:<br
+     />&gt; x, y, z, rotation<br
+     />&gt; x, y, z, location<br
+     />&gt; x, y, z, size<br
+     />&gt; y, z, unit circle coordinates for x rotation<br
+     />&gt; x, z, unit circle coordinates for y rotation<br
+     />&gt; x, y, unit circle coordinates for z rotation<br
+     />&gt; bounds radius,</p
+  ><hr
+   /><p
+  ><a href="index.html"
+    >Back to Game Engine Functions</a
+    ></p
+  ></div
+>
+</body>
+</html>
+

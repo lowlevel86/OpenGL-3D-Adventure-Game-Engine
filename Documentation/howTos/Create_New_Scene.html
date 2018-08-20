@@ -1,0 +1,270 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>Create New Scene</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+</head>
+<body>
+<div id="header">
+<h1 class="title">Create New Scene</h1>
+</div>
+<p>This howto will add a 5th scene using the 1st scene as a template.</p>
+<hr />
+<p><strong>Copy scene1.c and rename it as scene5.c</strong></p>
+<hr />
+<p><strong>In main.c</strong></p>
+<hr />
+<p><strong>Find:</strong></p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c">   <span class="kw">if</span> (sceneNumber == <span class="dv">5</span>)
+   sceneNumber = <span class="dv">0</span>;</code></pre></div>
+<p><strong>And replace with:</strong></p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c">   <span class="kw">if</span> (sceneNumber == <span class="dv">6</span>)
+   sceneNumber = <span class="dv">0</span>;</code></pre></div>
+<hr />
+<p><strong>Find:</strong></p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c">   <span class="kw">if</span> (sceneNumber == <span class="dv">4</span>)
+   {
+      <span class="ot">#include &quot;scene4.c&quot;</span>
+      <span class="kw">return</span>;
+   }</code></pre></div>
+<p><strong>And replace with:</strong></p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c">   <span class="kw">if</span> (sceneNumber == <span class="dv">4</span>)
+   {
+      <span class="ot">#include &quot;scene4.c&quot;</span>
+      <span class="kw">return</span>;
+   }
+   <span class="kw">if</span> (sceneNumber == <span class="dv">5</span>)
+   {
+      <span class="ot">#include &quot;scene5.c&quot;</span>
+      <span class="kw">return</span>;
+   }</code></pre></div>
+<hr />
+<p>The compiler does not need to be told to compile scene5.c because it is apart of main.c.</p>
+<p>Compile and run.</p>
+<p>Press enter 5 times to see the 5th scene.</p>
+<hr />
+<hr />
+<p>Now to change the meshes within the scene.</p>
+<p><strong>In main.c</strong></p>
+<hr />
+<p><strong>Add under the includes:</strong></p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="ot">#include &quot;meshes/course3.h&quot;</span></code></pre></div>
+<hr />
+<p><strong>In the meshes folder</strong></p>
+<hr />
+<p><strong>Copy course1.blend and rename it as course3.blend</strong></p>
+<p><strong>Open course3.blend</strong></p>
+<p><strong>Goto File --&gt; Export --&gt; &quot;C code tex (.c)...&quot;</strong></p>
+<p><strong>Click &quot;Export to C (tex)&quot;</strong></p>
+<hr />
+<p><strong>In initialize.c</strong></p>
+<hr />
+<p><strong>Find:</strong></p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="co">// Initialize Scene 4 //</span>
+<span class="co">////////////////////////////////////////////////////////////////////</span></code></pre></div>
+<p><strong>And replace with:</strong></p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="co">// Initialize Scene 4 //</span>
+<span class="co">////////////////////////////////////////////////////////////////////</span>
+
+
+
+<span class="co">////////////////////////////////////////////////////////////////////</span>
+<span class="co">// Initialize Scene 5 //</span>
+
+<span class="dt">static</span> <span class="dt">int</span> initializeScene5 = TRUE;
+
+<span class="kw">if</span> (initializeScene5)
+{
+   <span class="co">// control camera lense size relative to the scene</span>
+   sceneSz = <span class="dv">20</span>; <span class="co">// used for opengl fog and clipping</span>
+   camLenseSz = <span class="fl">1.0</span> / sceneSz; <span class="co">// used for &quot;applyMeshViewRotLocSz()&quot;</span>
+   
+   <span class="co">// resize the course</span>
+   globalResize(&amp;course3_TRANS[<span class="dv">0</span>], course3_MESHCNT, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">15</span>, <span class="dv">15</span>, <span class="dv">15</span>);
+   
+   <span class="co">// copy the mesh data so you will always have the original data</span>
+   copyTransFromTo(&amp;course3_TRANS[<span class="dv">0</span>], &amp;course3_STATICTRANS[<span class="dv">0</span>], course3_MESHCNT);
+   copyMeshFromTo(&amp;course3_POINT[<span class="dv">0</span>], &amp;course3_POINTDATSZ[<span class="dv">0</span>], <span class="dv">0</span>,
+                  &amp;course3_STATICPOINT[<span class="dv">0</span>], &amp;course3_POINTDATSZ[<span class="dv">0</span>], <span class="dv">0</span>, course3_MESHCNT);
+   
+   initializeScene5 = FALSE;
+}
+
+<span class="co">// Initialize Scene 5 //</span>
+<span class="co">////////////////////////////////////////////////////////////////////</span></code></pre></div>
+<hr />
+<p><strong>In scene5.c</strong></p>
+<hr />
+<p><strong>Find all instances of:</strong></p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c">course1_</code></pre></div>
+<p><strong>And replace with:</strong></p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c">course3_</code></pre></div>
+<hr />
+<p><strong>Find and delete:</strong></p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="co">// move the moving platform</span>
+animatePlatform = animatePlatform + <span class="fl">0.01</span>;
+
+animateLocFromTo(&amp;course3_TRANS[course3_stopperA*TRSZ],
+                 &amp;course3_TRANS[course3_stopperB*TRSZ], <span class="dv">1</span>, &amp;buffer_TRANS[<span class="dv">0</span>], &amp;animatePlatform, <span class="dv">0</span>, <span class="dv">2</span>);
+
+animateLocFromTo(&amp;course3_TRANS[course3_stopperB*TRSZ],
+                 &amp;course3_TRANS[course3_stopperA*TRSZ], <span class="dv">1</span>, &amp;buffer_TRANS[<span class="dv">0</span>], &amp;animatePlatform, <span class="dv">1</span>, <span class="dv">2</span>);
+
+xPlatformNewloc = buffer_TRANS[LOCX] - course3_TRANS[course3_moving*TRSZ+LOCX];
+yPlatformNewloc = buffer_TRANS[LOCY] - course3_TRANS[course3_moving*TRSZ+LOCY];
+zPlatformNewloc = buffer_TRANS[LOCZ] - course3_TRANS[course3_moving*TRSZ+LOCZ];
+
+localMove(&amp;course3_TRANS[<span class="dv">0</span>], course3_moving, xPlatformNewloc, yPlatformNewloc, zPlatformNewloc);
+
+
+<span class="co">// move the character with the platform when standing on it</span>
+localBoxDetectAndMove(&amp;course3_TRANS[course3_moving*TRSZ],
+                      &amp;character_TRANS[character_feetBox*TRSZ], <span class="fl">0.001</span>,
+                      <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, FALSE, &amp;nullVar, &amp;nullVar, &amp;nullVar, &amp;boxContactData, &amp;contact);
+
+<span class="kw">if</span> (contact)
+globalMove(&amp;character_TRANS[<span class="dv">0</span>], character_MESHCNT, xPlatformNewloc, yPlatformNewloc, zPlatformNewloc);</code></pre></div>
+<hr />
+<hr />
+<p>The compiler needs to be told to compile the mesh data.</p>
+<p>To compile with gcc:</p>
+<p><strong>In Makefile.win</strong></p>
+<hr />
+<p><strong>Find:</strong></p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c">meshes\course2.o</code></pre></div>
+<p><strong>And replace with:</strong></p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c">meshes\course2.o meshes\course3.o </code></pre></div>
+<hr />
+<p>To compile with tcc:</p>
+<p><strong>In tmake.bat</strong></p>
+<hr />
+<p><strong>Find:</strong></p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c">meshes\course2.o</code></pre></div>
+<p><strong>And replace with:</strong></p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c">meshes\course2.o meshes\course3.o </code></pre></div>
+<hr />
+<p><strong>Find:</strong></p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="kw">if</span> NOT exist rsrc.res ..\..\tccAndTools\Gorc\Gorc.exe /r rsrc.rc</code></pre></div>
+<p><strong>And replace with:</strong></p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="kw">if</span> NOT exist meshes\course3.o ..\..\tccAndTools\tcc\tcc.exe -c meshes\course3.c -o meshes\course3.o
+
+<span class="kw">if</span> NOT exist rsrc.res ..\..\tccAndTools\Gorc\Gorc.exe /r rsrc.rc</code></pre></div>
+<hr />
+<p>Compile and run.</p>
+<p>Press enter 5 times to see the results in the 5th scene.<br />
+The platform should not be moving.</p>
+<hr />
+<hr />
+<p>Now to change the &quot;dome&quot; mesh.</p>
+<p><strong>In main.c</strong></p>
+<hr />
+<p><strong>Add under the includes:</strong></p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="ot">#include &quot;meshes/dome3.h&quot;</span></code></pre></div>
+<hr />
+<p><strong>In the meshes folder</strong></p>
+<hr />
+<p><strong>Copy dome2.blend and rename it as dome3.blend</strong></p>
+<p><strong>Open dome3.blend</strong></p>
+<p><strong>Goto File --&gt; Export --&gt; &quot;C code tex (.c)...&quot;</strong></p>
+<p><strong>Click &quot;Export to C (tex)&quot;</strong></p>
+<hr />
+<p><strong>In initialize.c</strong></p>
+<hr />
+<p><strong>Find:</strong></p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="kw">if</span> (initializeScene5)
+{</code></pre></div>
+<p><strong>And replace with:</strong></p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="kw">if</span> (initializeScene5)
+{
+   <span class="co">// resize the dome</span>
+   globalResize(&amp;dome3_TRANS[<span class="dv">0</span>], dome3_MESHCNT, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">300</span>, <span class="dv">300</span>, <span class="dv">300</span>);
+   
+   <span class="co">// copy the mesh data so you will always have the original data</span>
+   copyTransFromTo(&amp;dome3_TRANS[<span class="dv">0</span>], &amp;dome3_STATICTRANS[<span class="dv">0</span>], dome3_MESHCNT);
+   copyMeshFromTo(&amp;dome3_POINT[<span class="dv">0</span>], &amp;dome3_POINTDATSZ[<span class="dv">0</span>], <span class="dv">0</span>,
+                  &amp;dome3_STATICPOINT[<span class="dv">0</span>], &amp;dome3_POINTDATSZ[<span class="dv">0</span>], <span class="dv">0</span>, dome3_MESHCNT);</code></pre></div>
+<hr />
+<p><strong>In scene5.c</strong></p>
+<hr />
+<p><strong>Find all instances of:</strong></p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c">dome1_</code></pre></div>
+<p><strong>And replace with:</strong></p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c">dome3_</code></pre></div>
+<hr />
+<p><strong>Find all instances of:</strong></p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c">grass</code></pre></div>
+<p><strong>And replace with:</strong></p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c">ocean</code></pre></div>
+<hr />
+<hr />
+<p>The compiler needs to be told to compile the mesh data.</p>
+<p>To compile with gcc:</p>
+<p><strong>In Makefile.win</strong></p>
+<hr />
+<p><strong>Find:</strong></p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c">meshes\dome2.o</code></pre></div>
+<p><strong>And replace with:</strong></p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c">meshes\dome2.o meshes\dome3.o </code></pre></div>
+<hr />
+<p>To compile with tcc:</p>
+<p><strong>In tmake.bat</strong></p>
+<hr />
+<p><strong>Find:</strong></p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c">meshes\dome2.o</code></pre></div>
+<p><strong>And replace with:</strong></p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c">meshes\dome2.o meshes\dome3.o </code></pre></div>
+<hr />
+<p><strong>Find:</strong></p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="kw">if</span> NOT exist rsrc.res ..\..\tccAndTools\Gorc\Gorc.exe /r rsrc.rc</code></pre></div>
+<p><strong>And replace with:</strong></p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="kw">if</span> NOT exist meshes\dome3.o ..\..\tccAndTools\tcc\tcc.exe -c meshes\dome3.c -o meshes\dome3.o
+
+<span class="kw">if</span> NOT exist rsrc.res ..\..\tccAndTools\Gorc\Gorc.exe /r rsrc.rc</code></pre></div>
+<hr />
+<p>Compile and run.</p>
+<p>Press enter 5 times to see the results in the 5th scene.<br />
+The background scenery should be different.</p>
+<hr />
+<p><a href="index.html">Back to Game Engine HowTos</a></p>
+</body>
+</html>

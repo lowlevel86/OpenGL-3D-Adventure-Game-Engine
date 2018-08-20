@@ -1,0 +1,28 @@
+CC = i686-w64-mingw32-gcc
+WINDRES = i686-w64-mingw32-windres
+RES = rsrc.res
+OBJ = main.o setDisplay.o mixPlaySnd.o sounds/jumpSndData.o sounds/footStepsSndData.o sounds/windSndData.o sounds/oceanSndData.o sounds/smMachineSndData.o sounds/boopSndData.o sounds/beepSndData.o sounds/popSndData.o sounds/boomSndData.o meshes/texture/grassTexData.o meshes/texture/oceanTexData.o meshes/texture/nonSlipSteelTexData.o meshes/texture/boxTexData.o meshes/character.o meshes/shadow.o meshes/run1.o meshes/run2.o meshes/run3.o meshes/run4.o meshes/jump.o meshes/liftUp.o meshes/course1.o meshes/course2.o meshes/dome1.o meshes/dome2.o meshes/arena.o meshes/camera.o meshes/cubes.o 3dEngine/rotate.o 3dEngine/rotate2.o 3dEngine/applyRotLocSz.o 3dEngine/transform.o 3dEngine/drawMeshGL.o 3dEngine/textureGL.o 3dEngine/asciiOpenGL.o 3dEngine/collisionDetect.o 3dEngine/collisionDetect2.o 3dEngine/path.o 3dEngine/physics.o 3dEngine/glDebug.o 3dEngine/animate.o 3dEngine/polyTransData.o $(RES)
+LIBS = -mwindows -lopengl32 -lwinmm
+BIN = game.exe
+CFLAGS = -Wall
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(OBJ) -o $(BIN) $(LIBS)
+
+main.o: .FORCE
+	$(CC) -c main.c -o main.o $(CFLAGS)
+
+.FORCE:
+
+
+rsrc.res: rsrc.rc 
+	$(WINDRES) --use-temp-file -i rsrc.rc --input-format=rc -o rsrc.res -O coff

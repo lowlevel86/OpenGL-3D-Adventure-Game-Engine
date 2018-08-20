@@ -1,0 +1,328 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>transform.c</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="date" content="" />
+</head>
+<body>
+<h1 class="title">transform.c</h1>
+<div id="TOC"
+><ul
+  ><li
+    ><a href="#globalrot"
+      >globalRot()</a
+      ></li
+    ><li
+    ><a href="#localrot"
+      >localRot()</a
+      ></li
+    ><li
+    ><a href="#globalrevrot"
+      >globalRevRot()</a
+      ></li
+    ><li
+    ><a href="#localrevrot"
+      >localRevRot()</a
+      ></li
+    ><li
+    ><a href="#globalconcurrentaxisrot"
+      >globalConcurrentAxisRot()</a
+      ></li
+    ><li
+    ><a href="#localconcurrentaxisrot"
+      >localConcurrentAxisRot()</a
+      ></li
+    ><li
+    ><a href="#globalmove"
+      >globalMove()</a
+      ></li
+    ><li
+    ><a href="#localmove"
+      >localMove()</a
+      ></li
+    ><li
+    ><a href="#globalresize"
+      >globalResize()</a
+      ></li
+    ><li
+    ><a href="#localresize"
+      >localResize()</a
+      ></li
+    ><li
+    ><a href="#globalucrot"
+      >globalUcRot()</a
+      ></li
+    ><li
+    ><a href="#localucrot"
+      >localUcRot()</a
+      ></li
+    ><li
+    ><a href="#globalrevucrot"
+      >globalRevUcRot()</a
+      ></li
+    ><li
+    ><a href="#localrevucrot"
+      >localRevUcRot()</a
+      ></li
+    ><li
+    ><a href="#copytransfromto"
+      >copyTransFromTo()</a
+      ></li
+    ><li
+    ><a href="#copyrotfromto"
+      >copyRotFromTo()</a
+      ></li
+    ><li
+    ><a href="#copylocfromto"
+      >copyLocFromTo()</a
+      ></li
+    ><li
+    ><a href="#copysizefromto"
+      >copySizeFromTo()</a
+      ></li
+    ><li
+    ><a href="#copyucrotfromto"
+      >copyUcRotFromTo()</a
+      ></li
+    ><li
+    ><a href="#copymeshfromto"
+      >copyMeshFromTo()</a
+      ></li
+    ><li
+    ><a href="#copycolorfromto"
+      >copyColorFromTo()</a
+      ></li
+    ><li
+    ><a href="#copytexcoordfromto"
+      >copyTexCoordFromTo()</a
+      ></li
+    ></ul
+  ></div
+>
+<hr
+ /><div id="globalrot"
+><h3
+  ><a href="#TOC"
+    >globalRot()</a
+    ></h3
+  ><p
+  >Similar to localRot() except it rotates many objects around a center point.</p
+  ><hr
+   /></div
+><div id="localrot"
+><h3
+  ><a href="#TOC"
+    >localRot()</a
+    ></h3
+  ><p
+  >Rotates an object in sequence around the x, y, then z axis.</p
+  ><hr
+   /></div
+><div id="globalrevrot"
+><h3
+  ><a href="#TOC"
+    >globalRevRot()</a
+    ></h3
+  ><p
+  >Similar to localRevRot() except it rotates many objects around a center point.</p
+  ><hr
+   /></div
+><div id="localrevrot"
+><h3
+  ><a href="#TOC"
+    >localRevRot()</a
+    ></h3
+  ><p
+  >Rotates an object in reverse sequence around the z, y, then x axis.</p
+  ><hr
+   /></div
+><div id="globalconcurrentaxisrot"
+><h3
+  ><a href="#TOC"
+    >globalConcurrentAxisRot()</a
+    ></h3
+  ><p
+  >Similar to localConcurrentAxisRot() except it rotates many objects around a center point.</p
+  ><hr
+   /></div
+><div id="localconcurrentaxisrot"
+><h3
+  ><a href="#TOC"
+    >localConcurrentAxisRot()</a
+    ></h3
+  ><p
+  >As opposed to localRot(), localConcurrentAxisRot() can rotate the x,y,z axes at the same time.</p
+  ><p
+  ><img src="transform/serialRot.gif"
+     /> <img src="transform/parallelRot.gif"
+     /></p
+  ><hr
+   /></div
+><div id="globalmove"
+><h3
+  ><a href="#TOC"
+    >globalMove()</a
+    ></h3
+  ><p
+  >Similar to localMove() except it moves many objects at a time.</p
+  ><hr
+   /></div
+><div id="localmove"
+><h3
+  ><a href="#TOC"
+    >localMove()</a
+    ></h3
+  ><p
+  >Moves an object.</p
+  ><hr
+   /></div
+><div id="globalresize"
+><h3
+  ><a href="#TOC"
+    >globalResize()</a
+    ></h3
+  ><p
+  >Similar to localResize() except it resizes many objects relative to a center point.</p
+  ><hr
+   /></div
+><div id="localresize"
+><h3
+  ><a href="#TOC"
+    >localResize()</a
+    ></h3
+  ><p
+  >Resizes an object.</p
+  ><hr
+   /></div
+><div id="globalucrot"
+><h3
+  ><a href="#TOC"
+    >globalUcRot()</a
+    ></h3
+  ><p
+  >Similar to localUcRot() except it rotates many objects around a center point.</p
+  ><hr
+   /></div
+><div id="localucrot"
+><h3
+  ><a href="#TOC"
+    >localUcRot()</a
+    ></h3
+  ><p
+  >Rotates an object in sequence around the x, y, then z axis using unit circle values.</p
+  ><hr
+   /></div
+><div id="globalrevucrot"
+><h3
+  ><a href="#TOC"
+    >globalRevUcRot()</a
+    ></h3
+  ><p
+  >Similar to localRevUcRot() except it rotates many objects around a center point.</p
+  ><hr
+   /></div
+><div id="localrevucrot"
+><h3
+  ><a href="#TOC"
+    >localRevUcRot()</a
+    ></h3
+  ><p
+  >Rotates an object in reverse sequence around the z, y, then x axis using unit circle values.</p
+  ><hr
+   /></div
+><div id="copytransfromto"
+><h3
+  ><a href="#TOC"
+    >copyTransFromTo()</a
+    ></h3
+  ><p
+  >Copy all of the transformation data from one place to another.<br
+     />Transformation data affected:<br
+     />* rotation<br
+     />* location<br
+     />* size<br
+     />* unit circle coordinates<br
+     />* bounds radius</p
+  ><hr
+   /></div
+><div id="copyrotfromto"
+><h3
+  ><a href="#TOC"
+    >copyRotFromTo()</a
+    ></h3
+  ><p
+  >Copy rotation data.<br
+     />Transformation data affected:<br
+     />* rotation</p
+  ><hr
+   /></div
+><div id="copylocfromto"
+><h3
+  ><a href="#TOC"
+    >copyLocFromTo()</a
+    ></h3
+  ><p
+  >Copy position data.<br
+     />Transformation data affected:<br
+     />* location</p
+  ><hr
+   /></div
+><div id="copysizefromto"
+><h3
+  ><a href="#TOC"
+    >copySizeFromTo()</a
+    ></h3
+  ><p
+  >Copy size data.<br
+     />Transformation data affected:<br
+     />* size</p
+  ><hr
+   /></div
+><div id="copyucrotfromto"
+><h3
+  ><a href="#TOC"
+    >copyUcRotFromTo()</a
+    ></h3
+  ><p
+  >Copy unit circle coordinate data.<br
+     />Transformation data affected:<br
+     />* unit circle coordinates</p
+  ><hr
+   /></div
+><div id="copymeshfromto"
+><h3
+  ><a href="#TOC"
+    >copyMeshFromTo()</a
+    ></h3
+  ><p
+  >Copy point data.</p
+  ><hr
+   /></div
+><div id="copycolorfromto"
+><h3
+  ><a href="#TOC"
+    >copyColorFromTo()</a
+    ></h3
+  ><p
+  >Copy vertex colors.</p
+  ><hr
+   /></div
+><div id="copytexcoordfromto"
+><h3
+  ><a href="#TOC"
+    >copyTexCoordFromTo()</a
+    ></h3
+  ><p
+  >Copy texture coordinates.</p
+  ><hr
+   /><p
+  ><a href="index.html"
+    >Back to Game Engine Functions</a
+    ></p
+  ></div
+>
+</body>
+</html>
+

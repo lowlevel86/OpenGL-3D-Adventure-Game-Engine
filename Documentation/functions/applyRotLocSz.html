@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>applyRotLocSz.c</title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<div id="header">
+<h1 class="title">applyRotLocSz.c</h1>
+</div>
+<div id="TOC">
+<ul>
+<li><a href="#applyrotlocsz">applyRotLocSz()</a></li>
+<li><a href="#applymeshviewrotlocsz">applyMeshViewRotLocSz()</a></li>
+</ul>
+</div>
+<hr />
+<p>Instead of changing the rotation, location or size of a mesh by moving each vertex again and again, it is possible to change only a few numbers representing many transformations and later applying those numbers to each vertex. This allows less computation for multiple transformations on a mesh.<br />
+These functions are typically used right before rendering.<br />
+The order of how transformations are applied is imported because different orders can give different results.</p>
+<hr />
+<h3 id="applyrotlocsz">applyRotLocSz()</h3>
+<p>Applies transformation data to the point data of each mesh.<br />
+The transformation is applied in the following order:<br />
+1) size<br />
+2) unit circle coordinates (for rotation)<br />
+3) location</p>
+<p>The unit circle coordinate data is used instead of the rotation data to calculate rotations because it is faster.</p>
+<hr />
+<h3 id="applymeshviewrotlocsz">applyMeshViewRotLocSz()</h3>
+<p>Instead of using the view data within the &quot;rendrInfo&quot; data structure, it is possible to just use a mesh as a camera by using its transformation data.<br />
+The &quot;camera&quot; mesh transformation is applied in the following order:<br />
+1) location<br />
+2) unit circle coordinates (for rotation)<br />
+3) size</p>
+<hr />
+<p><a href="index.html">Back to Game Engine Functions</a></p>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>Add Mesh</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+</head>
+<body>
+<div id="header">
+<h1 class="title">Add Mesh</h1>
+</div>
+<div class="figure">
+<img src="Add_Mesh/0.png" />
+
+</div>
+<hr />
+<p>This howto will add a light cycle mesh in the 4th scene.</p>
+<p><strong>In main.c</strong></p>
+<hr />
+<p><strong>Add under the includes:</strong></p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="ot">#include &quot;meshes/lightCycle.h&quot;</span></code></pre></div>
+<hr />
+<p><strong>In initialize.c</strong></p>
+<hr />
+<p><strong>Find:</strong></p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="kw">if</span> (initializeScene4)
+{</code></pre></div>
+<p><strong>And replace with:</strong></p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="kw">if</span> (initializeScene4)
+{
+   globalResize(&amp;lightCycle_TRANS[<span class="dv">0</span>], lightCycle_MESHCNT, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">50</span>, <span class="dv">50</span>, <span class="dv">50</span>);
+
+   copyTransFromTo(&amp;lightCycle_TRANS[<span class="dv">0</span>], &amp;lightCycle_STATICTRANS[<span class="dv">0</span>], lightCycle_MESHCNT);
+   copyMeshFromTo(&amp;lightCycle_POINT[<span class="dv">0</span>], &amp;lightCycle_POINTDATSZ[<span class="dv">0</span>], <span class="dv">0</span>,
+                  &amp;lightCycle_STATICPOINT[<span class="dv">0</span>], &amp;lightCycle_POINTDATSZ[<span class="dv">0</span>], <span class="dv">0</span>, lightCycle_MESHCNT);</code></pre></div>
+<hr />
+<p><strong>In scene4.c</strong></p>
+<hr />
+<p><strong>Find:</strong></p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="co">// reset mesh data for each frame</span></code></pre></div>
+<p><strong>And replace with:</strong></p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="co">// reset mesh data for each frame</span>
+copyMeshFromTo(&amp;lightCycle_STATICPOINT[<span class="dv">0</span>], &amp;lightCycle_POINTDATSZ[<span class="dv">0</span>], <span class="dv">0</span>,
+               &amp;lightCycle_POINT[<span class="dv">0</span>], &amp;lightCycle_POINTDATSZ[<span class="dv">0</span>], <span class="dv">0</span>, lightCycle_MESHCNT);</code></pre></div>
+<hr />
+<p><strong>Find:</strong></p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c">glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+glClearColor(<span class="fl">0.</span>65f, <span class="fl">0.</span>65f, <span class="fl">0.</span>65f, <span class="fl">1.</span>0f);
+
+glDisable(GL_FOG);</code></pre></div>
+<p><strong>And replace with:</strong></p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c">glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+glClearColor(<span class="fl">0.</span>65f, <span class="fl">0.</span>65f, <span class="fl">0.</span>65f, <span class="fl">1.</span>0f);
+
+glDisable(GL_FOG);
+
+<span class="co">// apply transformation data to the meshes</span>
+applyRotLocSz(&amp;lightCycle_TRANS[<span class="dv">0</span>], &amp;lightCycle_POINT[<span class="dv">0</span>], &amp;lightCycle_POINTDATSZ[<span class="dv">0</span>], <span class="dv">0</span>, lightCycle_MESHCNT);
+
+<span class="co">// draw mesh</span>
+drawMesh(&amp;lightCycle_POINT[<span class="dv">0</span>], &amp;lightCycle_QUAD[<span class="dv">0</span>], &amp;lightCycle_TRI[<span class="dv">0</span>], &amp;lightCycle_VCOLOR[<span class="dv">0</span>],
+         &amp;lightCycle_TEX[<span class="dv">0</span>], &amp;lightCycle_TEXCOORD[<span class="dv">0</span>], &amp;lightCycle_TEXLINKDAT[<span class="dv">0</span>],
+         &amp;lightCycle_QUADDATSZ[<span class="dv">0</span>], &amp;lightCycle_TRIDATSZ[<span class="dv">0</span>], &amp;lightCycle_HIDE[<span class="dv">0</span>], <span class="dv">0</span>, lightCycle_MESHCNT, rI);</code></pre></div>
+<hr />
+<hr />
+<p>The compiler needs to be told to compile the mesh data.</p>
+<p>To compile with gcc:</p>
+<p><strong>In Makefile.win</strong></p>
+<hr />
+<p><strong>Find:</strong></p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c">meshes/cubes.o</code></pre></div>
+<p><strong>And replace with:</strong></p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c">meshes/cubes.o meshes/lightCycle.o</code></pre></div>
+<hr />
+<p>To compile with tcc:</p>
+<p><strong>In tmake.bat</strong></p>
+<hr />
+<p><strong>Find:</strong></p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c">meshes\cubes.o</code></pre></div>
+<p><strong>And replace with:</strong></p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c">meshes\cubes.o meshes\lightCycle.o </code></pre></div>
+<hr />
+<p><strong>Find:</strong></p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="kw">if</span> NOT exist rsrc.res ..\..\tccAndTools\Gorc\Gorc.exe /r rsrc.rc</code></pre></div>
+<p><strong>And replace with:</strong></p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="kw">if</span> NOT exist meshes\lightCycle.o ..\..\tccAndTools\tcc\tcc.exe -c meshes\lightCycle.c -o meshes\lightCycle.o
+
+<span class="kw">if</span> NOT exist rsrc.res ..\..\tccAndTools\Gorc\Gorc.exe /r rsrc.rc</code></pre></div>
+<hr />
+<p>Compile and run.</p>
+<p>Press enter 4 times to see the results in the 4th scene.</p>
+<hr />
+<hr />
+<p>To not draw the cubes mesh and to allow the mouse to rotate the light cycle</p>
+<p><strong>In scene4.c</strong></p>
+<hr />
+<p><strong>Find:</strong></p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="co">// draw mesh</span>
+drawMesh(&amp;cubes_POINT[<span class="dv">0</span>], &amp;cubes_QUAD[<span class="dv">0</span>], &amp;cubes_TRI[<span class="dv">0</span>], &amp;cubes_VCOLOR[<span class="dv">0</span>],
+         &amp;cubes_TEX[<span class="dv">0</span>], &amp;cubes_TEXCOORD[<span class="dv">0</span>], &amp;cubes_TEXLINKDAT[<span class="dv">0</span>],
+         &amp;cubes_QUADDATSZ[<span class="dv">0</span>], &amp;cubes_TRIDATSZ[<span class="dv">0</span>], &amp;cubes_HIDE[<span class="dv">0</span>], <span class="dv">0</span>, cubes_MESHCNT, rI);
+
+cubes_HIDE[cubes_plane] = FALSE;</code></pre></div>
+<p><strong>And replace with:</strong></p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="co">/*</span>
+<span class="co">// draw mesh</span>
+<span class="co">drawMesh(&amp;cubes_POINT[0], &amp;cubes_QUAD[0], &amp;cubes_TRI[0], &amp;cubes_VCOLOR[0],</span>
+<span class="co">         &amp;cubes_TEX[0], &amp;cubes_TEXCOORD[0], &amp;cubes_TEXLINKDAT[0],</span>
+<span class="co">         &amp;cubes_QUADDATSZ[0], &amp;cubes_TRIDATSZ[0], &amp;cubes_HIDE[0], 0, cubes_MESHCNT, rI);</span>
+
+<span class="co">cubes_HIDE[cubes_plane] = FALSE;</span>
+<span class="co">*/</span></code></pre></div>
+<hr />
+<p><strong>Find:</strong></p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="kw">if</span> (leftMouseDown)
+{</code></pre></div>
+<p><strong>And replace with:</strong></p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="kw">if</span> (leftMouseDown)
+{
+   globalConcurrentAxisRot(&amp;lightCycle_TRANS[<span class="dv">0</span>], lightCycle_MESHCNT, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, -yDragLgth, -xDragLgth, <span class="dv">0</span>);</code></pre></div>
+<hr />
+<p>Compile and run.</p>
+<p>Press enter 4 times to see the results in the 4th scene.</p>
+<hr />
+<hr />
+<p><a href="index.html">Back to Game Engine HowTos</a></p>
+</body>
+</html>
