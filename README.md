@@ -4,5 +4,5 @@
 
 ### Features
 * Written in C and uses basic openGL functions
-* Possible pixel to pixel positioning of objects at the lense no matter the projection
+* Possible pixel to pixel positioning of objects no matter the projection
 
