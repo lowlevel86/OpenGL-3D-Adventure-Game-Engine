@@ -4,5 +4,5 @@
 
 ### Features
 * Written in C and uses basic openGL functions
-* Possible pixel to pixel positioning of objects no matter the projection
+* Practical control over the view frustum
 
