@@ -2,7 +2,7 @@
 
 ![](./Documentation/howTos/Debug/0.png)
 
-#### This game engine features
+### Features
 * Written in C and uses basic openGL functions
-* Pixel to pixel positioning of objects at the lense no matter the projection
+* Possible pixel to pixel positioning of objects at the lense no matter the projection
 
