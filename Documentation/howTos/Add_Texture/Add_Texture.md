@@ -6,6 +6,7 @@
 
 This howto will add texture to a light cycle mesh in the 4th scene.
 
+You will need to compile texToC from the "Tools" folder and place it in the "texture" folder.  
 Note that the "Add Mesh" howto must be completed first.
 
 Go into the "meshes" folder.  

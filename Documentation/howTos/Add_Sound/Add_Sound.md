@@ -2,10 +2,10 @@
 
 This howto will add sound to the 4th scene and play each time the left mouse button is pressed.
 
+You will need to compile wavToC from the "Tools" folder and place it in the "sounds" folder.  
 Go into the "sounds" folder open a terminal and type:  
 **wavToC shoot.wav**  
 
-It is also possible to drag and drop shoot.wav onto wavToC.bat.  
 This should convert the .wav file into source code.
 
 ---
