@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<div id="TOC">
+<ul>
+<li><a href="#getting-started">Getting Started</a></li>
+</ul>
+</div>
+<h3 id="getting-started">Getting Started</h3>
+<hr />
+<p>You will need a c compiler<br />
+Download MinGW and install from sourceforge.net</p>
+<p>Edit environment variables<br />
+Add C:\MinGW\bin to Path</p>
+<p>In a command terminal type:<br />
+gcc -v<br />
+It should output the compiler version</p>
+<p>In a command terminal cd to the &quot;Source&quot; directory and type:<br />
+echo mingw32-make.exe -f .\Makefile.win %1 &gt; make.bat</p>
+<p>Then type:<br />
+make<br />
+This should compile the source code using &quot;Makefile.win&quot;</p>
+<div class="figure">
+<img src="GuyOnPlatform.png" />
+
+</div>
+<p>Note: If using a different compiler it might be easier to compile the demos in the &quot;Documentation&quot; directory first.</p>
+<p>Once you have a working compiler try the howTos or start modding the source code.</p>
+<p><a href="howTos/index.html">View HowTos</a><br />
+<a href="functions/index.html">View Functions</a></p>
+<hr />
+</body>
+</html>
