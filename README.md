@@ -7,7 +7,7 @@
 * Practical control over the view frustum
 * Compiles game to a stand-alone executable
 
-[Getting Started](Documentation/index.md)  
+[Getting Started](Documentation/Getting_Started.md)  
 
 [View HowTos](Documentation/howTos/index.md)  
 [View Functions](Documentation/functions/index.md)  
