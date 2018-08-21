@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>Angular Vertex Color Shading Code</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+</head>
+<body>
+<div id="header">
+<h1 class="title">Angular Vertex Color Shading Code</h1>
+</div>
+<p><img src="0.png" /> <img src="1.png" /></p>
+<hr />
+<p>This code will color only every other vertex making a mesh look angular.</p>
+<p><strong>In initialize.c</strong></p>
+<hr />
+<p><strong>Find:</strong></p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="kw">if</span> (initializeScene4)
+{</code></pre></div>
+<p><strong>And replace with:</strong></p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="kw">if</span> (initializeScene4)
+{
+   <span class="dt">char</span> *VCOLOR_PTR = cubes_VCOLOR;
+   <span class="dt">int</span> VCOLOR_SIZE = <span class="kw">sizeof</span>(cubes_VCOLOR);
+   <span class="dt">float</span> colorAmount = <span class="fl">0.0</span>;
+   
+   <span class="kw">for</span> (i=<span class="dv">0</span>; i &lt; VCOLOR_SIZE; i+=<span class="dv">4</span>*<span class="dv">2</span>)
+   {
+      VCOLOR_PTR[i<span class="dv">+0</span>] = (<span class="dt">unsigned</span> <span class="dt">char</span>)((<span class="dt">float</span>)(VCOLOR_PTR[i<span class="dv">+0</span>]&amp;<span class="bn">0xFF</span>) * colorAmount);
+      VCOLOR_PTR[i<span class="dv">+1</span>] = (<span class="dt">unsigned</span> <span class="dt">char</span>)((<span class="dt">float</span>)(VCOLOR_PTR[i<span class="dv">+1</span>]&amp;<span class="bn">0xFF</span>) * colorAmount);
+      VCOLOR_PTR[i<span class="dv">+2</span>] = (<span class="dt">unsigned</span> <span class="dt">char</span>)((<span class="dt">float</span>)(VCOLOR_PTR[i<span class="dv">+2</span>]&amp;<span class="bn">0xFF</span>) * colorAmount);
+   }</code></pre></div>
+<hr />
+<p>Compile and run.</p>
+<p>Press enter 4 times to see the results in the 4th scene.</p>
+<hr />
+<hr />
+<p>It is possible to change the &quot;colorAmount&quot; variable to increase or decrease the shading. Also the vertex colors data could be saved to file for manually changing a mesh's &quot;.c&quot; file and permanently keeping the changes.</p>
+<hr />
+<p><strong>Find:</strong></p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c">   <span class="dt">float</span> colorAmount = <span class="fl">0.0</span>;
+   
+   <span class="kw">for</span> (i=<span class="dv">0</span>; i &lt; VCOLOR_SIZE; i+=<span class="dv">4</span>*<span class="dv">2</span>)
+   {
+      VCOLOR_PTR[i<span class="dv">+0</span>] = (<span class="dt">unsigned</span> <span class="dt">char</span>)((<span class="dt">float</span>)(VCOLOR_PTR[i<span class="dv">+0</span>]&amp;<span class="bn">0xFF</span>) * colorAmount);
+      VCOLOR_PTR[i<span class="dv">+1</span>] = (<span class="dt">unsigned</span> <span class="dt">char</span>)((<span class="dt">float</span>)(VCOLOR_PTR[i<span class="dv">+1</span>]&amp;<span class="bn">0xFF</span>) * colorAmount);
+      VCOLOR_PTR[i<span class="dv">+2</span>] = (<span class="dt">unsigned</span> <span class="dt">char</span>)((<span class="dt">float</span>)(VCOLOR_PTR[i<span class="dv">+2</span>]&amp;<span class="bn">0xFF</span>) * colorAmount);
+   }</code></pre></div>
+<p><strong>And replace with:</strong></p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c">   <span class="dt">float</span> colorAmount = <span class="fl">0.5</span>;
+   
+   <span class="kw">for</span> (i=<span class="dv">0</span>; i &lt; VCOLOR_SIZE; i+=<span class="dv">4</span>*<span class="dv">2</span>)
+   {
+      VCOLOR_PTR[i<span class="dv">+0</span>] = (<span class="dt">unsigned</span> <span class="dt">char</span>)((<span class="dt">float</span>)(VCOLOR_PTR[i<span class="dv">+0</span>]&amp;<span class="bn">0xFF</span>) * colorAmount);
+      VCOLOR_PTR[i<span class="dv">+1</span>] = (<span class="dt">unsigned</span> <span class="dt">char</span>)((<span class="dt">float</span>)(VCOLOR_PTR[i<span class="dv">+1</span>]&amp;<span class="bn">0xFF</span>) * colorAmount);
+      VCOLOR_PTR[i<span class="dv">+2</span>] = (<span class="dt">unsigned</span> <span class="dt">char</span>)((<span class="dt">float</span>)(VCOLOR_PTR[i<span class="dv">+2</span>]&amp;<span class="bn">0xFF</span>) * colorAmount);
+   }
+   
+   FILE *fp;
+   fp = fopen(<span class="st">&quot;VCOLOR.txt&quot;</span>, <span class="st">&quot;w&quot;</span>);
+   <span class="kw">for</span> (i=<span class="dv">0</span>; i &lt; VCOLOR_SIZE; i+=<span class="dv">4</span>)
+   fprintf(fp, <span class="st">&quot;%i, %i, %i, %i,</span><span class="ch">\n</span><span class="st">&quot;</span>, (<span class="dt">unsigned</span> <span class="dt">char</span>)VCOLOR_PTR[i<span class="dv">+0</span>],
+                                    (<span class="dt">unsigned</span> <span class="dt">char</span>)VCOLOR_PTR[i<span class="dv">+1</span>],
+                                    (<span class="dt">unsigned</span> <span class="dt">char</span>)VCOLOR_PTR[i<span class="dv">+2</span>],
+                                    (<span class="dt">unsigned</span> <span class="dt">char</span>)VCOLOR_PTR[i<span class="dv">+3</span>]);
+   fclose(fp);</code></pre></div>
+<hr />
+<p>Compile and run.</p>
+<hr />
+<hr />
+</body>
+</html>

@@ -1,6 +1,6 @@
 % Angular Vertex Color Shading Code
 
-![](Angular_Vertex_Color_Shading_Code/0.png) ![](Angular_Vertex_Color_Shading_Code/1.png)
+![](0.png) ![](1.png)
 
 ---
 
@@ -90,6 +90,4 @@ Compile and run.
 ---
 
 ---
-
-[Back to Game Engine HowTos](index.html)
 

@@ -1,6 +1,6 @@
 % Game Genie
 
-![](Game_Genie/genie.png)
+![](genie.png)
 
 ---
 
@@ -139,6 +139,4 @@ Compile and run.
 ---
 
 ---
-
-[Back to Game Engine HowTos](index.html)
 

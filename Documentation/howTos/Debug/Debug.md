@@ -1,6 +1,6 @@
 % Debug
 
-![](Debug/0.png)
+![](0.png)
 
 This howto will demonstrate functions that can be used for debugging.
 
@@ -188,6 +188,4 @@ In the 1st scene press 'S' to save a screen shot to a .ppm image file.
 ---
 
 ---
-
-[Back to Game Engine HowTos](index.html)
 

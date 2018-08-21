@@ -1,6 +1,6 @@
 % Add Texture
 
-![](Add_Texture/0.png)
+![](0.png)
 
 ---
 
@@ -169,6 +169,4 @@ Compile and run.
 Press enter 4 times to see the results in the 4th scene.
 
 ---
-
-[Back to Game Engine HowTos](index.html)
 

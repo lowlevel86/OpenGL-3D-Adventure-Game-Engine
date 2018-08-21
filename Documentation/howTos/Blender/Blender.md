@@ -1,6 +1,6 @@
 % Blender
 
-![](Blender/0.png)
+![](0.png)
 
 These howtos are for blender 2.49b.
 
@@ -54,7 +54,7 @@ Hold 'Shift' and select two edges at the corner and press 'F' to create a face
 Repeat for each corner of the shell  
 Use 'S' and 'G' to size and move the shell how you want it on top of the wheels  
 
-![](Blender/1.png)
+![](1.png)
 
 ##### Create the rest of the body:
 In the "View Properties" window move the 3D cursor to location 0.0, 0.0, 0.0  
@@ -86,7 +86,7 @@ Use 'B' to select the 5 connected lines
 Press 'W' and in the "Specials" window click "Subdivide Multi", use 3 for "Number of Cuts"  
 Hold 'Ctrl' and press tab and select "Vertices" for vertex select mode  
 
-![](Blender/2.png) ![](Blender/3.png)
+![](2.png) ![](3.png)
 
 Select everything except the outer edges and center vertex of each circle  
 Press 'W' and in the "Specials" window click "Smooth" and repeat  
@@ -124,7 +124,7 @@ Hold 'Ctrl', press 'N' and click "Recalculate normals outside"
 Repeat this process for all objects  
 Note: To recalculate normals inside hold 'Ctrl', 'Shift' and press 'N'  
 
-![](Blender/4.png)
+![](4.png)
 
 ##### Using Vertex Paint:
 Change where it say's "Object Mode" to "Vertex Paint"  
@@ -145,7 +145,7 @@ Open "lightCycle.blend"
 Right click between the "3D View" and "Buttons Window" windows and click "Split Area"  
 Use about half the "3D View" window and change the window on the right to "UV/Image Editor"  
 
-![](Blender/5.png)
+![](5.png)
 
 ##### Prepare the mesh:
 Make sure normals are flipped the right way first  
@@ -250,6 +250,4 @@ Goto "File" -> "Import" -> "C code tex (.c)..."
 Choose a compatible c file  
 
 ---
-
-[Back to Game Engine HowTos](index.html)
 

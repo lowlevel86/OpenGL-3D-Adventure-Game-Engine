@@ -411,5 +411,3 @@ The background scenery should be different.
 
 ---
 
-[Back to Game Engine HowTos](index.html)
-

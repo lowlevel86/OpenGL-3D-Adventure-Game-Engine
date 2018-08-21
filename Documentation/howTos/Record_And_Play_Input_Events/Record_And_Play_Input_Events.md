@@ -1,6 +1,6 @@
 % Record And Play Input Events
 
-![](Record_And_Play_Input_Events/arcadeCabinet.png)
+![](arcadeCabinet.png)
 
 If you have noticed in an arcade, games automatically playing. This howto will show how it could be done.
 
@@ -140,6 +140,4 @@ Compile and run.
 This can be setup to replay exactly the same over and over which makes it useful for debugging.
 
 ---
-
-[Back to Game Engine HowTos](index.html)
 
