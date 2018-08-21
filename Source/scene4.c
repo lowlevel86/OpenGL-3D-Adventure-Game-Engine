@@ -187,6 +187,10 @@ if (startCountDown)
 glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 glClearColor(0.65f, 0.65f, 0.65f, 1.0f);
 
+fogColor[0] = 0.7;//r
+fogColor[1] = 0.7;//g
+fogColor[2] = 0.7;//b
+glFogfv(GL_FOG_COLOR, fogColor);
 glDisable(GL_FOG);
 
 

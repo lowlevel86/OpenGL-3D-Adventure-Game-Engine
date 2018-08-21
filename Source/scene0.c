@@ -16,7 +16,9 @@ if (resetScene)
 glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 
-float fogColor[3] = {0.7, 0.7, 0.7};
+fogColor[0] = 0.7;//r
+fogColor[1] = 0.7;//g
+fogColor[2] = 0.7;//b
 glFogfv(GL_FOG_COLOR, fogColor);
 glDisable(GL_FOG);
 
