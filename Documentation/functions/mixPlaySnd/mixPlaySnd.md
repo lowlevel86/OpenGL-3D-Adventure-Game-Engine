@@ -18,17 +18,13 @@ Sound data is sent to mixSndTracks() where it is mixed and later seamlessly play
 
 ### endAllSound()
 
-Controls when to gently stop all sound from playing.
-
-![](3.png)
+Controls when to stop all sound from playing.
 
 ---
 
 ### endSound()
 
-Controls when to gently stop a specific sound from playing.
-
-![](3.png)
+Controls when to stop a specific sound from playing.
 
 ---
 
