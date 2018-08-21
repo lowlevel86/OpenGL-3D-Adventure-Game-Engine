@@ -1,5 +1,8 @@
 if (resetScene)
 {
+   // control camera lense size relative to the scene
+   sceneSz = 3.0; // used for opengl fog and clipping
+   camLenseSz = 1.0 / sceneSz; // used for "applyMeshViewRotLocSz()"
    cameraDistance = 100;
    
    // reset transformation data

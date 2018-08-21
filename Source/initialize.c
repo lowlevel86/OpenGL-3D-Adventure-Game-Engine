@@ -212,10 +212,7 @@ static int initializeScene1 = TRUE;
 
 if (initializeScene1)
 {
-   // control camera lense size relative to the scene
-   sceneSz = 20; // used for opengl fog and clipping
-   camLenseSz = 1.0 / sceneSz; // used for "applyMeshViewRotLocSz()"
-   
+   globalResize(&camera_STATICTRANS[0], camera_MESHCNT, 0, 0, 0, 1.0, 2.0, 1.0);
    // resize the dome
    globalResize(&dome1_TRANS[0], dome1_MESHCNT, 0, 0, 0, 300, 300, 300);
    
@@ -267,10 +264,6 @@ static int initializeScene2 = TRUE;
 
 if (initializeScene2)
 {
-   // control camera lense size relative to the scene
-   sceneSz = 20; // used for opengl fog and clipping
-   camLenseSz = 1.0 / sceneSz; // used for "applyMeshViewRotLocSz()"
-   
    // resize the dome
    globalResize(&dome2_TRANS[0], dome2_MESHCNT, 0, 0, 0, 300, 300, 300);
    
@@ -376,10 +369,6 @@ static int initializeScene3 = TRUE;
 
 if (initializeScene3)
 {
-   // control camera lense size relative to the scene
-   sceneSz = 100; // used for opengl fog and clipping
-   camLenseSz = 1.0 / sceneSz; // used for "applyMeshViewRotLocSz()"
-   
    // resize meshes
    globalResize(&arena_TRANS[0], arena_MESHCNT, 0, 0, 0, 20, 20, 20);
 
