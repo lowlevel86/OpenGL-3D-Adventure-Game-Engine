@@ -20,8 +20,9 @@ The unit circle coordinate data is used instead of the rotation data to calculat
 ---
 
 ### applyMeshViewRotLocSz()
-Instead of using the view data within the "rendrInfo" data structure, it is possible to just use a mesh as a camera by using its transformation data.  
-The "camera" mesh transformation is applied in the following order:  
+This function will use a mesh as a camera.  
+If the "camLenseSz" variable is 0 then the camera lense size will be taken from the camera mesh.  
+The camera mesh transformation is applied in the following order:  
 1) location  
 2) unit circle coordinates (for rotation)  
 3) size  
