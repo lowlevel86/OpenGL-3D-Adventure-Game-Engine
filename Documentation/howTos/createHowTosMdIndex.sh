@@ -10,6 +10,6 @@ ls -d ./*/ | sed "s/$/*.md/" | sed "s/^/echo /" | sh | while read -r fileToRead 
    # print html url link for the c file
    echo "[$folderName.c]($folderName/$folderName.md)" >> index.md
    
-   #echo "" >> index.md
+   echo "" >> index.md
    
 done

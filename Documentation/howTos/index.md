@@ -1,10 +1,19 @@
 ### Game Engine Functions
 [Add_Mesh.c](Add_Mesh/Add_Mesh.md)
+
 [Add_Sound.c](Add_Sound/Add_Sound.md)
+
 [Add_Texture.c](Add_Texture/Add_Texture.md)
+
 [Angular_Vertex_Color_Shading_Code.c](Angular_Vertex_Color_Shading_Code/Angular_Vertex_Color_Shading_Code.md)
+
 [Blender.c](Blender/Blender.md)
+
 [Create_New_Scene.c](Create_New_Scene/Create_New_Scene.md)
+
 [Debug.c](Debug/Debug.md)
+
 [Game_Genie.c](Game_Genie/Game_Genie.md)
+
 [Record_And_Play_Input_Events.c](Record_And_Play_Input_Events/Record_And_Play_Input_Events.md)
+
