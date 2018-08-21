@@ -1,4 +1,4 @@
-### Game Engine Functions
+### HowTos
 [Add_Mesh.c](Add_Mesh/Add_Mesh.md)  
 [Add_Sound.c](Add_Sound/Add_Sound.md)  
 [Add_Texture.c](Add_Texture/Add_Texture.md)  

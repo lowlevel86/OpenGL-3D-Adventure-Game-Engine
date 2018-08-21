@@ -1,11 +1,11 @@
 #!/bin/bash
 
 echo "<HTML>" > index.html
-echo "<HEAD><TITLE>Game Engine Functions</TITLE></HEAD>" >> index.html
+echo "<HEAD><TITLE>HowTos</TITLE></HEAD>" >> index.html
 echo "<BODY>" >> index.html
 
 # print html url link for the c file
-echo "<H3><CENTER>Game Engine Functions</CENTER></H3>" >> index.html
+echo "<H3><CENTER>HowTos</CENTER></H3>" >> index.html
 
 ls -d ./*/ | sed "s/$/*.md/" | sed "s/^/echo /" | sh | while read -r fileToRead ; do
 

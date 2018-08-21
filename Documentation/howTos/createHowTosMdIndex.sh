@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "### Game Engine Functions" > index.md
+echo "### HowTos" > index.md
 
 ls -d ./*/ | sed "s/$/*.md/" | sed "s/^/echo /" | sh | while read -r fileToRead ; do
 
