@@ -119,10 +119,6 @@ static int initializeScene5 = TRUE;
 
 if (initializeScene5)
 {
-   // control camera lense size relative to the scene
-   sceneSz = 20; // used for opengl fog and clipping
-   camLenseSz = 1.0 / sceneSz; // used for "applyMeshViewRotLocSz()"
-   
    // resize the course
    globalResize(&course3_TRANS[0], course3_MESHCNT, 0, 0, 0, 15, 15, 15);
    
