@@ -626,16 +626,6 @@ void drawScene()
    rI.camEndZ = 20*sceneSz;
 
    
-   // is the guy within x and y bounds of the platform
-   if ((world_TRANS[world_guy*TRSZ+LOCX] <= world_TRANS[world_platform*TRSZ+SZX]) &&
-       (world_TRANS[world_guy*TRSZ+LOCX] >= -world_TRANS[world_platform*TRSZ+SZX]) &&
-       (world_TRANS[world_guy*TRSZ+LOCY] <= world_TRANS[world_platform*TRSZ+SZY]) &&
-       (world_TRANS[world_guy*TRSZ+LOCY] >= -world_TRANS[world_platform*TRSZ+SZY]))
-   printfScrn(0, 0, 32, 0x0, rI, "On Platform");
-   else
-   printfScrn(0, 0, 32, 0x0, rI, "Off Platform");
-
-   
    // apply transformation data to the meshes
    applyRotLocSz(&world_TRANS[0], &world_POINT[0], &world_POINTDATSZ[0], 0, world_MESHCNT);
    applyMeshViewRotLocSz(&world_POINT[0], &world_POINTDATSZ[0], 0, world_MESHCNT,
@@ -645,6 +635,16 @@ void drawScene()
    drawMesh(&world_POINT[0], &world_QUAD[0], &world_TRI[0], &world_VCOLOR[0],
             &world_TEX[0], &world_TEXCOORD[0], &world_TEXLINKDAT[0],
             &world_QUADDATSZ[0], &world_TRIDATSZ[0], &world_HIDE[0], 0, world_MESHCNT, rI);
+
+
+   // is the guy within x and y bounds of the platform
+   if ((world_TRANS[world_guy*TRSZ+LOCX] <= world_TRANS[world_platform*TRSZ+SZX]) &&
+       (world_TRANS[world_guy*TRSZ+LOCX] >= -world_TRANS[world_platform*TRSZ+SZX]) &&
+       (world_TRANS[world_guy*TRSZ+LOCY] <= world_TRANS[world_platform*TRSZ+SZY]) &&
+       (world_TRANS[world_guy*TRSZ+LOCY] >= -world_TRANS[world_platform*TRSZ+SZY]))
+   printfScrn(0, 0, 32, 0x0, rI, "On Platform");
+   else
+   printfScrn(0, 0, 32, 0x0, rI, "Off Platform");
 
    // END OF DRAW //
    ////////////////////////////////////////////////////////////////////
