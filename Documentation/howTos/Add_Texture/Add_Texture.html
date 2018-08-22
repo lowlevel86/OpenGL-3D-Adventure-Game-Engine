@@ -69,15 +69,9 @@ Then within the &quot;texture&quot; folder open a terminal and type:<br />
 <p><strong>In scene4.c</strong></p>
 <hr />
 <p><strong>Find:</strong></p>
-<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c">glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-glClearColor(<span class="fl">0.</span>65f, <span class="fl">0.</span>65f, <span class="fl">0.</span>65f, <span class="fl">1.</span>0f);
-
-glDisable(GL_FOG);</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c">glDisable(GL_FOG);</code></pre></div>
 <p><strong>And replace with:</strong></p>
-<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c">glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-glClearColor(<span class="fl">0.</span>65f, <span class="fl">0.</span>65f, <span class="fl">0.</span>65f, <span class="fl">1.</span>0f);
-
-glDisable(GL_FOG);
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c">glDisable(GL_FOG);
 
 <span class="co">// ADD TEXTURES</span>
 

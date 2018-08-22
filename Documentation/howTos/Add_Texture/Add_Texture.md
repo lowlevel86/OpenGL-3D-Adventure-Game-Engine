@@ -36,18 +36,12 @@ This should convert the .bmp files into source code.
 **Find:**
 
 ~~~ {.c}
-glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-glClearColor(0.65f, 0.65f, 0.65f, 1.0f);
-
 glDisable(GL_FOG);
 ~~~
 
 **And replace with:**
 
 ~~~ {.c}
-glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-glClearColor(0.65f, 0.65f, 0.65f, 1.0f);
-
 glDisable(GL_FOG);
 
 // ADD TEXTURES

@@ -66,18 +66,12 @@ copyMeshFromTo(&lightCycle_STATICPOINT[0], &lightCycle_POINTDATSZ[0], 0,
 **Find:**
 
 ~~~ {.c}
-glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-glClearColor(0.65f, 0.65f, 0.65f, 1.0f);
-
 glDisable(GL_FOG);
 ~~~
 
 **And replace with:**
 
 ~~~ {.c}
-glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-glClearColor(0.65f, 0.65f, 0.65f, 1.0f);
-
 glDisable(GL_FOG);
 
 // apply transformation data to the meshes

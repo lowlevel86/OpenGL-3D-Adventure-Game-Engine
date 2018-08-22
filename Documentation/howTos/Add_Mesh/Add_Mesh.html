@@ -83,15 +83,9 @@ copyMeshFromTo(&amp;lightCycle_STATICPOINT[<span class="dv">0</span>], &amp;ligh
                &amp;lightCycle_POINT[<span class="dv">0</span>], &amp;lightCycle_POINTDATSZ[<span class="dv">0</span>], <span class="dv">0</span>, lightCycle_MESHCNT);</code></pre></div>
 <hr />
 <p><strong>Find:</strong></p>
-<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c">glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-glClearColor(<span class="fl">0.</span>65f, <span class="fl">0.</span>65f, <span class="fl">0.</span>65f, <span class="fl">1.</span>0f);
-
-glDisable(GL_FOG);</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c">glDisable(GL_FOG);</code></pre></div>
 <p><strong>And replace with:</strong></p>
-<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c">glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-glClearColor(<span class="fl">0.</span>65f, <span class="fl">0.</span>65f, <span class="fl">0.</span>65f, <span class="fl">1.</span>0f);
-
-glDisable(GL_FOG);
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c">glDisable(GL_FOG);
 
 <span class="co">// apply transformation data to the meshes</span>
 applyRotLocSz(&amp;lightCycle_TRANS[<span class="dv">0</span>], &amp;lightCycle_POINT[<span class="dv">0</span>], &amp;lightCycle_POINTDATSZ[<span class="dv">0</span>], <span class="dv">0</span>, lightCycle_MESHCNT);
