@@ -5,7 +5,7 @@
 ### Features
 * Written in C and uses basic openGL functions
 * Practical control over the view frustum
-* Compiles game to a stand-alone executable
+* Game code compiles to a stand-alone executable
 
 [Getting Started](Documentation/Getting_Started.md)  
 
